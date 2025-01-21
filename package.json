@@ -1,0 +1,25 @@
+{
+  "name": "middlecourseulbitv",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx webpack",
+    "build:prod": "webpack serve --env mode=production",
+    "build:dev": "webpack serve --env mode=development"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "@types/webpack": "^5.28.5",
+    "html-webpack-plugin": "^5.6.3",
+    "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^4.15.2"
+  }
+}
