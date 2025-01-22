@@ -1,4 +1,4 @@
-import { buildDevServer } from "../buildDevServer";
+import { buildDevServer } from "./buildDevServer";
 import { buildLoaders } from "./buildLoaders";
 import { buildPlugin } from "./buildPlugins";
 import { buildResolvers } from "./buildResolvers";
@@ -18,7 +18,7 @@ export function buildWebpackConfig(options: BuildOptions):webpack.Configuration{
           clean: true,
         },
         module: {
-          rules: buildLoaders()
+          rules: buildLoaders(options)
         },
         resolve: buildResolvers(),
         plugins: buildPlugin(options),
