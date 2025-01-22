@@ -6,9 +6,7 @@ export const Counter = () => {
 
     const increment = () => {
         setCount(count + 1);
-    };
-
-    console.log(classes); // Добавьте это для отладки
+};
 
     return (
         <div className={classes.btn}>
