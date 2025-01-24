@@ -1,6 +1,7 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import * as style from "./Navbar.module.scss";
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
+import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 
 interface NavbarProps {
   className?: string;
@@ -9,6 +10,7 @@ interface NavbarProps {
 export function Navbar({ className }: NavbarProps) {
   return (
     <div className={classNames(style.navbar, {}, [className])}>
+      <ThemeSwitcher />
       <div className={style.links}>
         <AppLink
           theme={AppLinkTheme.INVERTED}
