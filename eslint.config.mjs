@@ -4,6 +4,7 @@ import tseslint from "typescript-eslint";
 import pluginReactConfig from "eslint-plugin-react/configs/recommended.js";
 import { fixupConfigRules } from "@eslint/compat";
 import i18next from 'eslint-plugin-i18next';
+const jest = require('eslint-plugin-jest');
 
 export default [
     { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
@@ -12,6 +13,14 @@ export default [
     pluginJs.configs.recommended,
     ...tseslint.configs.recommended,
     ...fixupConfigRules(pluginReactConfig),
+    {
+        files: ["**/*.test.{js,mjs,cjs,ts,jsx,tsx}"],
+        ...jest.configs['flat/recommended'],
+        rules: {
+          ...jest.configs['flat/recommended'].rules,
+          'jest/prefer-expect-assertions': 'off',
+        },
+      },
     {
         rules: {
             "react/jsx-indent": [2, 4],
