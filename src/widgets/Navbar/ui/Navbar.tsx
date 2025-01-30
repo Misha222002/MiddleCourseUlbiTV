@@ -5,11 +5,11 @@ import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 import { useTranslation } from "react-i18next";
 
 interface NavbarProps {
-  className?: string;
+    className?: string;
 }
 
 export function Navbar({ className }: NavbarProps) {
-    const {t} = useTranslation()
+    const { t } = useTranslation();
     return (
         <div className={classNames(style.navbar, {}, [className])}>
             <div className={style.links}>
