@@ -19,8 +19,11 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
                 plugins: [
                     [
                         "i18next-extract",
-                        { locales: ["ru", "en"], keyAsDefaultValue: ["en_US", "en_GB"] },
-                        isDev && require.resolve('react-refresh/babel')
+                        {
+                            locales: ["ru", "en"],
+                            keyAsDefaultValue: ["en_US", "en_GB"],
+                        },
+                        isDev && require.resolve("react-refresh/babel"),
                     ].filter(Boolean),
                 ],
             },
@@ -58,7 +61,9 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
                 loader: require.resolve("ts-loader"),
                 options: {
                     getCustomTransformers: () => ({
-                        before: [isDev && ReactRefreshTypeScript()].filter(Boolean),
+                        before: [isDev && ReactRefreshTypeScript()].filter(
+                            Boolean,
+                        ),
                     }),
                     transpileOnly: isDev,
                 },
