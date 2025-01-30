@@ -3,8 +3,9 @@ import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
 import pluginReactConfig from "eslint-plugin-react/configs/recommended.js";
 import { fixupConfigRules } from "@eslint/compat";
-import i18next from 'eslint-plugin-i18next';
-const jest = require('eslint-plugin-jest');
+import i18next from "eslint-plugin-i18next";
+import jest from "eslint-plugin-jest";
+import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 
 export default [
     { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
@@ -15,12 +16,12 @@ export default [
     ...fixupConfigRules(pluginReactConfig),
     {
         files: ["**/*.test.{js,mjs,cjs,ts,jsx,tsx}"],
-        ...jest.configs['flat/recommended'],
+        ...jest.configs["flat/recommended"],
         rules: {
-          ...jest.configs['flat/recommended'].rules,
-          'jest/prefer-expect-assertions': 'off',
+            ...jest.configs["flat/recommended"].rules,
+            "jest/prefer-expect-assertions": "off",
         },
-      },
+    },
     {
         rules: {
             "react/jsx-indent": [2, 4],
@@ -41,10 +42,13 @@ export default [
             "import/extensions": "off",
             "import/no-extraneous-dependencies": "off",
             "no-underscore-dangle": "off",
-            "@typescript-eslint/no-unused-vars": ['warn', { argsIgnorePattern: '^_' }],
-            "i18next/no-literal-string": ['error', { markupOnly: true }],
+            "@typescript-eslint/no-unused-vars": [
+                "warn",
+                { argsIgnorePattern: "^_" },
+            ],
+            "i18next/no-literal-string": ["error", { markupOnly: true }],
+            "prettier/prettier": ["error", { tabWidth: 4, useTabs: false }],
         },
-
     },
     {
         languageOptions: {
@@ -52,5 +56,6 @@ export default [
             sourceType: "module",
         },
     },
-    i18next.configs['flat/recommended'],
+    i18next.configs["flat/recommended"],
+    eslintPluginPrettierRecommended,
 ];

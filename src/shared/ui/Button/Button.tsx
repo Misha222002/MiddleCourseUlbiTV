@@ -3,13 +3,13 @@ import * as style from "./Button.module.scss";
 import { ButtonHTMLAttributes, FC, ReactNode } from "react";
 
 export enum ThemeButton {
-  CLEAR = "clear",
+    CLEAR = "clear",
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  className?: string;
-  children: ReactNode;
-  theme: ThemeButton;
+    className?: string;
+    children: ReactNode;
+    theme: ThemeButton;
 }
 
 export const Button: FC<ButtonProps> = (props) => {

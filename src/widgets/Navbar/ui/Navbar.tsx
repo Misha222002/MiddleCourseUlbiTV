@@ -4,11 +4,11 @@ import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { useTranslation } from "react-i18next";
 
 interface NavbarProps {
-  className?: string;
+    className?: string;
 }
 
 export function Navbar({ className }: NavbarProps) {
-    const {t} = useTranslation(['translation', 'about'])
+    const { t } = useTranslation(["translation", "about"]);
     return (
         <div className={classNames(style.navbar, {}, [className])}>
             <div className={style.links}>
@@ -20,7 +20,7 @@ export function Navbar({ className }: NavbarProps) {
                     {t("Главная")}
                 </AppLink>
                 <AppLink theme={AppLinkTheme.INVERTED} to={"/about"}>
-                    {t("О сайте", {ns: 'about'})}
+                    {t("О сайте", { ns: "about" })}
                 </AppLink>
             </div>
         </div>

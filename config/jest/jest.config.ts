@@ -3,7 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
-import type {Config} from 'jest';
+import type { Config } from "jest";
 
 const config: Config = {
     // All imported modules in your tests should be mocked automatically
@@ -18,9 +18,7 @@ const config: Config = {
     // Automatically clear mock calls, instances, contexts and results before every test
     clearMocks: true,
     testEnvironment: "jsdom",
-    moduleDirectories: [
-        "node_modules"
-    ],
+    moduleDirectories: ["node_modules"],
 
     // An array of file extensions your modules use
     moduleFileExtensions: [
@@ -31,15 +29,10 @@ const config: Config = {
         "ts",
         "tsx",
         "json",
-        "node"
+        "node",
     ],
-    coveragePathIgnorePatterns: [
-        "\\\\node_modules\\\\"
-    ],
-    testMatch: [
-        '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'
-    ],
-
+    coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
+    testMatch: ["<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)"],
 
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
@@ -51,7 +44,6 @@ const config: Config = {
     // coverageDirectory: undefined,
 
     // An array of regexp pattern strings used to skip coverage collection
-
 
     // Indicates which provider should be used to instrument code for coverage
     // coverageProvider: "babel",
@@ -94,7 +86,6 @@ const config: Config = {
     // maxWorkers: "50%",
 
     // An array of directory names to be searched recursively up from the requiring module's location
-   
 
     // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
     // moduleNameMapper: {},
@@ -130,7 +121,7 @@ const config: Config = {
     // restoreMocks: false,
 
     // The root directory that Jest should scan for tests and modules within
-    rootDir: '../../',
+    rootDir: "../../",
 
     // A list of paths to directories that Jest should use to search for files in
     // roots: [
