@@ -47,7 +47,10 @@ export default [
                 { argsIgnorePattern: "^_" },
             ],
             "i18next/no-literal-string": ["error", { markupOnly: true }],
-            "prettier/prettier": ["error", { tabWidth: 4, useTabs: false }],
+            "prettier/prettier": [
+                "error",
+                { tabWidth: 4, useTabs: false, endOfLine: "auto" },
+            ],
         },
     },
     {
