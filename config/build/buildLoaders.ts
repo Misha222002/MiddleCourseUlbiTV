@@ -43,6 +43,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
                 loader: "css-loader",
                 options: {
                     modules: {
+                        namedExport: false,
                         auto: true,
                         localIdentName: isDev
                             ? "[path][name]__[local]--[hash:base64:8]"

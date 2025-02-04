@@ -9,7 +9,7 @@ export function buildPlugin({
     paths,
     isDev,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
-    return [
+    const plugins: (webpack.WebpackPluginInstance | false)[] = [
         isDev && new ReactRefreshWebpackPlugin(),
         new webpack.ProgressPlugin(),
         new HtmlWebpackPlugin({ template: paths.html }),
@@ -23,5 +23,9 @@ export function buildPlugin({
         new BundleAnalyzerPlugin({
             openAnalyzer: false,
         }),
-    ].filter(Boolean);
+    ];
+
+    return plugins.filter((plugin): plugin is webpack.WebpackPluginInstance =>
+        Boolean(plugin),
+    );
 }
