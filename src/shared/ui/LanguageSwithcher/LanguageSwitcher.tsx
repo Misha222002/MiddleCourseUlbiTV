@@ -1,5 +1,5 @@
 import { classNames } from "shared/lib/classNames/classNames";
-import * as style from "./LanguageSwitcher.module.scss";
+import style from "./LanguageSwitcher.module.scss";
 import { Button, ThemeButton } from "../Button/Button";
 import { useTranslation } from "react-i18next";
 
