@@ -11,4 +11,13 @@
     --navbar-height: 50px;
     --sidebar-width: 300px;
     --sidebar-width-collapsed: 80px;
+
+    // Colors
+
+    --bg-color: #fff;
+    --inverted-bg-color: #393939;
+    --primary-color: #393939;
+    --secondary-color: rgb(var(--primary-color) 0.5);
+    --inverted-primary-color: #fff;
+    --inverted-secondary-color: #e6e6e6;
 }
