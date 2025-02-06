@@ -20,9 +20,10 @@ export function buildPlugin({
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
         }),
-        new BundleAnalyzerPlugin({
-            openAnalyzer: false,
-        }),
+        isDev &&
+            new BundleAnalyzerPlugin({
+                openAnalyzer: false,
+            }),
     ];
 
     return plugins.filter((plugin): plugin is webpack.WebpackPluginInstance =>
