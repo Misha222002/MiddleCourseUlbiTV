@@ -11,18 +11,7 @@ export function Navbar({ className }: NavbarProps) {
     const { t } = useTranslation(["translation", "about"]);
     return (
         <div className={classNames(style.navbar, {}, [className])}>
-            <div className={style.links}>
-                <AppLink
-                    theme={AppLinkTheme.INVERTED}
-                    to={"/"}
-                    className={style.mainLink}
-                >
-                    {t("Главная")}
-                </AppLink>
-                <AppLink theme={AppLinkTheme.INVERTED} to={"/about"}>
-                    {t("О сайте", { ns: "about" })}
-                </AppLink>
-            </div>
+            <div className={style.links}>/</div>
         </div>
     );
 }
