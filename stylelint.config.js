@@ -1,4 +1,3 @@
-/** @type {import('stylelint').Config} */
 export default {
     extends: [
         "stylelint-config-standard-scss",
@@ -7,6 +6,11 @@ export default {
     plugins: ["stylelint-prettier"],
     rules: {
         "selector-class-pattern": null,
-        "prettier/prettier": true,
+        "prettier/prettier": [
+            true,
+            {
+                endOfLine: "auto",
+            },
+        ],
     },
 };

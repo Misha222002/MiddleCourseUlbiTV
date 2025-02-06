@@ -7,7 +7,7 @@ describe("sidebar", () => {
         renderWIthTranslation(<Sidebar />);
         expect(screen.getByTestId("sidebar")).toBeInTheDocument();
     });
-    test("test toggle", () => {
+    test("toggle", () => {
         renderWIthTranslation(<Sidebar />);
         const toggleBtn = screen.getByTestId("sidebar-toggle");
         expect(screen.getByTestId("sidebar")).toBeInTheDocument();
