@@ -1,4 +1,5 @@
-export default {
+// eslint-disable-next-line no-undef
+module.exports = {
     extends: [
         "stylelint-config-standard-scss",
         "stylelint-prettier/recommended",

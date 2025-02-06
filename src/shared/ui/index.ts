@@ -1,3 +1,3 @@
 import { PageLoader } from "./PageLoader/PageLoader";
-import { Button, ThemeButton } from "./Button/Button";
-export { Button, ThemeButton, PageLoader };
+import { Button, ButtonTheme } from "./Button/Button";
+export { Button, ButtonTheme, PageLoader };

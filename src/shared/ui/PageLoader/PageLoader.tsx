@@ -7,7 +7,6 @@ interface PageLoaderProps {
 }
 
 export const PageLoader = ({ className }: PageLoaderProps) => {
-    console.log("loader");
     return (
         <div className={classNames(style.pageLoader, {}, [className])}>
             <Loader />
