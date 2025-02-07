@@ -6,6 +6,9 @@ import { fixupConfigRules } from "@eslint/compat";
 import i18next from "eslint-plugin-i18next";
 import jest from "eslint-plugin-jest";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
+import { FlatCompat } from "@eslint/eslintrc";
+
+const compat = new FlatCompat();
 
 export default [
     { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
@@ -14,6 +17,7 @@ export default [
     pluginJs.configs.recommended,
     ...tseslint.configs.recommended,
     ...fixupConfigRules(pluginReactConfig),
+    ...compat.extends("plugin:react-hooks/recommended"),
     {
         files: ["**/*.test.{js,mjs,cjs,ts,jsx,tsx}"],
         ...jest.configs["flat/recommended"],
@@ -51,6 +55,8 @@ export default [
                 "error",
                 { tabWidth: 4, useTabs: false, endOfLine: "auto" },
             ],
+            "react-hooks/rules-of-hooks": "error",
+            "react-hooks/exhaustive-deps": "error",
         },
     },
     // Переводы не нужны в test
