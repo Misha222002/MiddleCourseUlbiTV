@@ -1,3 +1,4 @@
+import { Counter } from "entites/Counter";
 import { useTranslation } from "react-i18next";
 
 function MainPage() {

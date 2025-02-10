@@ -57,6 +57,7 @@ export default [
             ],
             "react-hooks/rules-of-hooks": "error",
             "react-hooks/exhaustive-deps": "error",
+            "@typescript-eslint/no-empty-object-type": "off",
         },
     },
     // Переводы не нужны в test
