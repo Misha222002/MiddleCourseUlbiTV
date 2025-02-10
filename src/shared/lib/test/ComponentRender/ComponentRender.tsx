@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import { StateSchema, StoreProvider } from "app/providers/StoreProvider";
-import { DeepPartial } from "entities/Counter";
+import { DeepPartial } from "entites/Counter";
 import { ReactNode } from "react";
 import { I18nextProvider } from "react-i18next";
 import { MemoryRouter } from "react-router-dom";
