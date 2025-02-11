@@ -36,8 +36,6 @@ export const Modal = (props: ModalProps) => {
         }
     }, [onClose]);
 
-    console.log(theme);
-
     const onContentClick = (e: React.MouseEvent) => {
         e.stopPropagation();
     };
@@ -61,12 +59,9 @@ export const Modal = (props: ModalProps) => {
         };
     }, [isOpen, onKeyDown]);
 
-    console.log(style, theme);
-
     const mods: Record<string, boolean> = {
         [style.opened]: isOpen,
         [style.isClosing]: isClosing,
-        [style[theme]]: true,
     };
 
     return (
