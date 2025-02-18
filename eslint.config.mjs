@@ -13,7 +13,11 @@ const compat = new FlatCompat();
 export default [
     { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
     { languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } } } },
-    { languageOptions: { globals: { ...globals.browser, __IS_DEV__: true } } },
+    {
+        languageOptions: {
+            globals: { ...globals.browser, __IS_DEV__: true, dirname: true },
+        },
+    },
     pluginJs.configs.recommended,
     ...tseslint.configs.recommended,
     ...fixupConfigRules(pluginReactConfig),
