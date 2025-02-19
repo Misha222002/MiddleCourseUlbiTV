@@ -1,7 +1,7 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import style from "./LoginForm.module.scss";
 import { useTranslation } from "react-i18next";
-import { Button } from "shared/ui";
+import { Button, ButtonTheme } from "shared/ui";
 import { Input } from "shared/ui/Input/Input";
 
 interface LoginFormProps {
@@ -23,7 +23,9 @@ export const LoginForm = ({ className }: LoginFormProps) => {
                 className={style.input}
                 placeholder={t("Введите пароль")}
             />
-            <Button className={style.loginBtn}>{t("Войти")}</Button>
+            <Button theme={ButtonTheme.OUTLINE} className={style.loginBtn}>
+                {t("Войти")}
+            </Button>
         </div>
     );
 };

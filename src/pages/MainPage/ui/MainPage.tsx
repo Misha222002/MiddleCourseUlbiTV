@@ -5,22 +5,8 @@ import { Input } from "shared/ui/Input/Input";
 
 function MainPage() {
     const { t } = useTranslation();
-    const [value, setValue] = useState("");
 
-    const onChange = (val: string) => {
-        setValue(val);
-    };
-
-    return (
-        <div>
-            {t("Главная страница")}
-            <Input
-                placeholder="Введите текст"
-                value={value}
-                onChange={onChange}
-            />
-        </div>
-    );
+    return <div>{t("Главная страница")}</div>;
 }
 
 export default MainPage;
