@@ -45,7 +45,7 @@ const config: Config = {
     moduleNameMapper: {
         "\\.(s?css)$": "identity-obj-proxy",
         "\\.svg": path.resolve(__dirname, "jestEmptyComponent"),
-        "^entities/(.*)$": "<rootDir>/src/entities/$1",
+        // "^entities/(.*)$": "<rootDir>/src/entities/$1",
     },
 
     // Indicates whether the coverage information should be collected while executing the test
