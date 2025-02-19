@@ -2,6 +2,9 @@
   "translation": {
     "Войти": "Sign in"
   },
+  "Введите username": "Enter username",
+  "Введите пароль": "Enter password",
+  "Войти": "log in",
   "Главная": "Main",
   "Главная страница": "Main page",
   "Кнопка": "Button",
