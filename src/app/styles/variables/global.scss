@@ -1,3 +1,4 @@
+/* stylelint-disable color-function-notation */
 :root {
     --font-family-main: consolas, "Times New Roman", serif;
     --font-size-m: 16px;
@@ -24,6 +25,8 @@
     // --inverted-primary-color: #fff;
     // --inverted-secondary-color: #e6e6e6;
     --overlay-color: rgba(0 0 0 / 60%);
+    --red-light: rgb(253, 27, 27);
+    --red-dark: rgb(189, 5, 5);
 
     // z-index
     --modal-z-index: 10;

@@ -2,6 +2,12 @@ import { promisify } from "util";
 import { readdir, writeFile } from "fs";
 import { join as joinPath, relative } from "path";
 
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 const asyncReaddir = promisify(readdir);
 const writeFileAsync = promisify(writeFile);
 
