@@ -2,6 +2,7 @@
     "name": "middlecourseulbitv",
     "version": "1.0.0",
     "main": "index.js",
+    "type": "module",
     "scripts": {
         "start": "webpack serve --env port=3000",
         "start:dev:server": "node ./json-server/index.js",
@@ -96,6 +97,7 @@
     },
     "dependencies": {
         "@reduxjs/toolkit": "^2.5.1",
+        "axios": "^1.7.9",
         "i18next": "^24.2.1",
         "i18next-browser-languagedetector": "^8.0.2",
         "i18next-http-backend": "^3.0.2",
