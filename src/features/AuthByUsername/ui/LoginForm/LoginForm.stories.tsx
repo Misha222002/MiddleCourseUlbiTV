@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
 
-import { LoginForm } from "./LoginForm";
+import LoginForm from "./LoginForm";
 import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
+import { loginReducer } from "features/AuthByUsername/model/slice/loginSlice";
 
 const meta = {
     title: "features/LoginForm",
@@ -30,6 +30,7 @@ export const Primary: Story = {
                         isLoading: false,
                     },
                 }}
+                asyncReducers={{ loginForm: loginReducer }}
             >
                 <Story />
             </StoreDecorator>
@@ -49,6 +50,7 @@ export const Error: Story = {
                         error: "Error",
                     },
                 }}
+                asyncReducers={{ loginForm: loginReducer }}
             >
                 <Story />
             </StoreDecorator>
@@ -68,6 +70,7 @@ export const Loading: Story = {
                         isLoading: true,
                     },
                 }}
+                asyncReducers={{ loginForm: loginReducer }}
             >
                 <Story />
             </StoreDecorator>

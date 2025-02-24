@@ -56,7 +56,9 @@ export function Navbar({ className }: NavbarProps) {
                 {t("Войти")}
             </Button>
             {/* eslint-disable-next-line i18next/no-literal-string */}
-            <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+            {isAuthModal && (
+                <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+            )}
         </div>
     );
 }

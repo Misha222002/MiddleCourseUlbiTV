@@ -10,13 +10,14 @@ import { StoreProvider } from "app/providers/StoreProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <StoreProvider>
-        <BrowserRouter>
-            <ErrorBoundary>
+    <ErrorBoundary>
+        <StoreProvider>
+            <BrowserRouter>
                 <ThemeProvider>
                     <App />
                 </ThemeProvider>
-            </ErrorBoundary>
-        </BrowserRouter>
-    </StoreProvider>,
+            </BrowserRouter>
+        </StoreProvider>
+        ,
+    </ErrorBoundary>,
 );
