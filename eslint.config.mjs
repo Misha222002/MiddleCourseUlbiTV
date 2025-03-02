@@ -54,6 +54,7 @@ export default [
                 "warn",
                 { argsIgnorePattern: "^_" },
             ],
+            "@typescript-eslint/no-explicit-any": "warn",
             "i18next/no-literal-string": ["error", { markupOnly: true }],
             "prettier/prettier": [
                 "error",
