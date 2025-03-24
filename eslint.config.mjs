@@ -15,7 +15,12 @@ export default [
     { languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } } } },
     {
         languageOptions: {
-            globals: { ...globals.browser, __IS_DEV__: true, dirname: true },
+            globals: {
+                ...globals.browser,
+                __IS_DEV__: true,
+                __API__: true,
+                dirname: true,
+            },
         },
     },
     pluginJs.configs.recommended,
