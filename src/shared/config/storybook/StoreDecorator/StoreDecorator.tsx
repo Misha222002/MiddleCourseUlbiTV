@@ -4,6 +4,7 @@ import { StateSchema, StoreProvider } from "app/providers/StoreProvider";
 import { DeepPartial } from "entites/Counter";
 import { ReducersMapObject } from "@reduxjs/toolkit";
 import { loginReducer } from "features/AuthByUsername/model/slice/loginSlice";
+import { profileReducer } from "entites/Profile";
 
 interface Props {
     children?: React.ReactNode;
@@ -11,7 +12,10 @@ interface Props {
     asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>;
 }
 
-const defaultAsyncreducers: DeepPartial<ReducersMapObject<StateSchema>> = {};
+const defaultAsyncreducers: DeepPartial<ReducersMapObject<StateSchema>> = {
+    loginForm: loginReducer,
+    profile: profileReducer,
+};
 
 export const StoreDecorator: FC<Props> = ({
     children,

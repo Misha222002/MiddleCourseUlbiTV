@@ -1,21 +1,25 @@
 {
-  "translation": {
-    "Войти": "Sign in",
-    "Выйти": "Logout"
-  },
-  "Введите username": "Enter username",
-  "Введите пароль": "Enter password",
-  "Войти": "log in",
-  "Вы ввели неверный логин или пароль": "You enter uncorrect login and password",
-  "Главная": "Main",
-  "Главная страница": "Main page",
-  "Кнопка": "Button",
-  "Короткий язык": "ru",
-  "Обновить страницу": "Refresh the page",
-  "Перевод": "Translate",
-  "Произошла непредвиденная ошибка": "Something wrong",
-  "Страница не найдена": "Page not found",
-  "Тестовый пример": "Test example",
-  "Форма авторизации": "Authorization form",
-  "Язык": "Русский"
+    "translation": {
+        "Войти": "Sign in",
+        "Выйти": "Logout"
+    },
+    "Введите username": "Enter username",
+    "Введите пароль": "Enter password",
+    "Войти": "log in",
+    "Вы ввели неверный логин или пароль": "You enter uncorrect login and password",
+    "Выйти": "Logout",
+    "Главная": "Main",
+    "Главная страница": "Main page",
+    "Кнопка": "Button",
+    "Короткий язык": "ru",
+    "Обновить страницу": "Refresh the page",
+    "Перевод": "Translate",
+    "Произошла непредвиденная ошибка": "Something wrong",
+    "Страница не найдена": "Page not found",
+    "Страница профиля": "Profile page",
+    "Тестовый пример": "Test example",
+    "Форма авторизации": "Authorization form",
+    "Язык": "Русский",
+    "Профиль": "Profile",
+    "О сайте": "About suite"
 }
