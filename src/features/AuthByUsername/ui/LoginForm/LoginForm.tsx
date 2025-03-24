@@ -19,19 +19,21 @@ import {
     DynamicModelLoader,
     ReducersList,
 } from "shared/lib/components/DynamicModelLoader/DynamicModelLoader";
+import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 
 export interface LoginFormProps {
     className?: string;
+    onSuccess: () => void;
 }
 
 const initialReducers: ReducersList = {
     loginForm: loginReducer,
 };
 
-const LoginFormComponent = ({ className }: LoginFormProps) => {
+const LoginFormComponent = ({ className, onSuccess }: LoginFormProps) => {
     const { t } = useTranslation();
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const dispatch = useDispatch<any>();
+    const dispatch = useAppDispatch();
     // const { username, password, error, isLoading } = useSelector(getLoginState);
 
     const username = useSelector(getLoginUsername);
@@ -53,9 +55,12 @@ const LoginFormComponent = ({ className }: LoginFormProps) => {
         [dispatch],
     );
 
-    const onLoginClick = useCallback(() => {
-        dispatch(loginByUsername({ username, password }));
-    }, [dispatch, username, password]);
+    const onLoginClick = useCallback(async () => {
+        const result = await dispatch(loginByUsername({ username, password }));
+        if (result.meta.requestStatus === "fulfilled") {
+            onSuccess();
+        }
+    }, [dispatch, username, password, onSuccess]);
 
     return (
         <DynamicModelLoader removeAfterUnmount reducers={initialReducers}>
