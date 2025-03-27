@@ -8,6 +8,7 @@ import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 export function buildPlugin({
     paths,
     isDev,
+    apiUrl,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
     const plugins: (webpack.WebpackPluginInstance | false)[] = [
         isDev && new ReactRefreshWebpackPlugin(),
@@ -19,6 +20,7 @@ export function buildPlugin({
         }),
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
+            __API__: JSON.stringify(apiUrl),
         }),
         isDev &&
             new BundleAnalyzerPlugin({
