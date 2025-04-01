@@ -74,7 +74,7 @@ const config: StorybookConfig = {
             }),
         );
 
-        config.module?.rules?.push(buildCssLoader(true));
+        config!.module?.rules?.push(buildCssLoader(true));
         return config;
     },
 };

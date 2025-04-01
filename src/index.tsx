@@ -8,7 +8,13 @@ import "./shared/config/i18n/i18n";
 import { ErrorBoundary } from "app/providers/ErrorBoundary";
 import { StoreProvider } from "app/providers/StoreProvider";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const rootElement = document.getElementById("root");
+
+if (!rootElement) {
+    throw new Error("Failed to find the root element");
+}
+
+const root = ReactDOM.createRoot(rootElement);
 root.render(
     <ErrorBoundary>
         <BrowserRouter>

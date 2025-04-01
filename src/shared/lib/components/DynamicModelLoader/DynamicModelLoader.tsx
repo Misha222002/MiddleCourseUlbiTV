@@ -24,20 +24,18 @@ export const DynamicModelLoader: FC<DynamicModelLoaderProps> = (props) => {
     const dispatch = useDispatch<any>();
 
     useEffect(() => {
-        Object.entries(reducers).forEach(
-            ([name, reducer]: ReducersListEntry) => {
-                store.reducerManager.add(name, reducer);
-                dispatch({ type: `@INIT ${name} reducer` });
-            },
-        );
+        Object.entries(reducers).forEach(([name, reducer]) => {
+            const key = name as StateSchemaKey;
+            store.reducerManager.add(key, reducer);
+            dispatch({ type: `@INIT ${key} reducer` });
+        });
         return () => {
             if (removeAfterUnmount) {
-                Object.entries(reducers).forEach(
-                    ([name]: ReducersListEntry) => {
-                        store.reducerManager.remove(name);
-                        dispatch({ type: `@DESTROY ${name} reducer` });
-                    },
-                );
+                Object.entries(reducers).forEach(([name]) => {
+                    const key = name as StateSchemaKey;
+                    store.reducerManager.remove(key);
+                    dispatch({ type: `@DESTROY ${key} reducer` });
+                });
             }
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
