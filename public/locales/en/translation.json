@@ -1,8 +1,4 @@
 {
-    "translation": {
-        "Войти": "Sign in",
-        "Выйти": "Logout"
-    },
     "Введите username": "Enter username",
     "Введите пароль": "Enter password",
     "Войти": "log in",
