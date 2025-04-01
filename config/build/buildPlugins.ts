@@ -20,7 +20,7 @@ export function buildPlugin({
         }),
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
-            __API__: JSON.stringify(apiUrl),
+            __API__: JSON.stringify(apiUrl) || "http://localhost:8000",
         }),
         isDev &&
             new BundleAnalyzerPlugin({

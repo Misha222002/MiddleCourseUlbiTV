@@ -5,6 +5,8 @@ import {
     ReducersMapObject,
 } from "@reduxjs/toolkit";
 import { ReducerManager, StateSchema, StateSchemaKey } from "./StateSchema";
+import { CounterSchema } from "entites/Counter";
+import { UserSchema } from "entites/User";
 
 export function createReducerManager(
     initialReducers: ReducersMapObject<StateSchema>,
@@ -25,7 +27,13 @@ export function createReducerManager(
                 });
                 keysToRemove = [];
             }
-            return combinedReducer(state, action);
+            return combinedReducer(
+                state as unknown as {
+                    counter: CounterSchema;
+                    user: UserSchema;
+                },
+                action,
+            );
         },
         add: (key: StateSchemaKey, reducer: Reducer) => {
             if (!key || reducers[key]) {
