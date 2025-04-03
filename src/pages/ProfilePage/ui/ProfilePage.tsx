@@ -1,6 +1,14 @@
-import { fetchProfileData, ProfileCard, profileReducer } from "entites/Profile";
+import {
+    fetchProfileData,
+    getProfileData,
+    getProfileError,
+    getProfileLoading,
+    ProfileCard,
+    profileReducer,
+} from "entites/Profile";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 import {
     DynamicModelLoader,
     ReducersList,
@@ -15,13 +23,17 @@ function ProfilePage() {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
 
+    const data = useSelector(getProfileData);
+    const isLoading = useSelector(getProfileLoading);
+    const error = useSelector(getProfileError);
+
     useEffect(() => {
         dispatch(fetchProfileData());
     }, [dispatch]);
 
     return (
         <DynamicModelLoader reducers={reducers} removeAfterUnmount>
-            <ProfileCard />
+            <ProfileCard data={data} />
         </DynamicModelLoader>
     );
 }
