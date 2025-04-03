@@ -15,12 +15,9 @@ interface ProfileCardProps {
     data?: Profile;
 }
 
-export const ProfileCard = ({ className }: ProfileCardProps) => {
+export const ProfileCard = ({ className, data }: ProfileCardProps) => {
     const { t } = useTranslation("profile");
 
-    const data = useSelector(getProfileData);
-    const isLoading = useSelector(getProfileLoading);
-    const error = useSelector(getProfileError);
     return (
         <div className={classNames(style.profileCard, {}, [className])}>
             <div className={style.header}>
