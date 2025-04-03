@@ -8,9 +8,11 @@ import { getProfileError } from "entites/Profile/modal/selectors/getProfileError
 import { Text } from "shared/ui/Text/Text";
 import { Button, ButtonTheme } from "shared/ui";
 import { Input } from "shared/ui/Input/Input";
+import { Profile } from "../../modal/types/profile";
 
 interface ProfileCardProps {
     className?: string;
+    data?: Profile;
 }
 
 export const ProfileCard = ({ className }: ProfileCardProps) => {
