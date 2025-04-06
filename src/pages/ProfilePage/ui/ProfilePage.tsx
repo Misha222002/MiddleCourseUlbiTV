@@ -33,7 +33,7 @@ function ProfilePage() {
 
     return (
         <DynamicModelLoader reducers={reducers} removeAfterUnmount>
-            <ProfileCard data={data} />
+            <ProfileCard data={data} isLoading={isLoading} error={error} />
         </DynamicModelLoader>
     );
 }
