@@ -21,9 +21,12 @@ export const CurrencySelect = (props: CurrencySelectProps) => {
     const { className, value, onChange, readonly } = props;
     const { t } = useTranslation("profile");
 
-    const onChangeHandler = useCallback((value: string) => {
-        onChange?.(value as Currency);
-    }, []);
+    const onChangeHandler = useCallback(
+        (value: string) => {
+            onChange?.(value as Currency);
+        },
+        [onChange],
+    );
 
     const Mods = {};
 

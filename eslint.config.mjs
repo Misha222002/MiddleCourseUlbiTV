@@ -84,6 +84,12 @@ export default [
             sourceType: "module",
         },
     },
+    {
+        files: ["*.json"],
+        rules: {
+            "array-element-newline": ["error", "always"],
+        },
+    },
     i18next.configs["flat/recommended"],
     eslintPluginPrettierRecommended,
 ];

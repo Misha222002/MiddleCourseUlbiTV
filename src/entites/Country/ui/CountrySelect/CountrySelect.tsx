@@ -20,9 +20,12 @@ export const CountrySelect = (props: CountrySelectProps) => {
     const { className, value, onChange, readonly } = props;
     const { t } = useTranslation("profile");
 
-    const onChangeHandler = useCallback((value: string) => {
-        onChange?.(value as Country);
-    }, []);
+    const onChangeHandler = useCallback(
+        (value: string) => {
+            onChange?.(value as Country);
+        },
+        [onChange],
+    );
 
     const Mods = {};
 
