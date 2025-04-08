@@ -11,7 +11,7 @@
     border: none;
     outline: none;
     width: 100%;
-    color: transparent;
+    color: transparent !important;
     text-shadow: 0 0 0 var(--primary-color);
 
     &:focus {
@@ -32,6 +32,10 @@
     left: 0;
     position: absolute;
     animation: blink 0.7s infinite;
+}
+
+.readonly {
+    opacity: 0.7;
 }
 
 @keyframes blink {
