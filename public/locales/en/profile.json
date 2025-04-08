@@ -1,4 +1,9 @@
 {
+    "Данные не указаны": "No data",
+    "Имя и фамилия обязательны": "Firstname and lastname requere",
+    "Некорректный возраст": "Incorrect age",
+    "Некорректный регион": "Incorrect country",
+    "Серверная ошибка": "Server error",
     "Ваше имя": "your firstname",
     "Ваше фамилия": "your lastname",
     "Профиль": "Profile",
