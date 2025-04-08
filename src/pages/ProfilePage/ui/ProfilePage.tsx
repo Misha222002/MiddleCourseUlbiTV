@@ -1,11 +1,11 @@
 import { Currency } from "entites/Currency";
 import {
     fetchProfileData,
-    getProfileData,
     getProfileError,
     getProfileForm,
     getProfileLoading,
     getProfileReadonly,
+    getProfileValidateErrors,
     profileActions,
     ProfileCard,
     ProfilePageHeader,
@@ -20,19 +20,32 @@ import {
     ReducersList,
 } from "shared/lib/components/DynamicModelLoader/DynamicModelLoader";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { Text, TextTheme } from "shared/ui/Text/Text";
+import { ValidateProfileError } from "entites/Profile/modal/types/profile";
 
 const reducers: ReducersList = {
     profile: profileReducer,
 };
 
 function ProfilePage() {
-    const { t } = useTranslation();
+    const { t } = useTranslation("profile");
     const dispatch = useAppDispatch();
 
     const formData = useSelector(getProfileForm);
     const isLoading = useSelector(getProfileLoading);
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfileReadonly);
+    const validateErrors = useSelector(getProfileValidateErrors);
+
+    const validateErrorsTranslate = {
+        [ValidateProfileError.SERVER_ERROR]: t("Серверная ошибка"),
+        [ValidateProfileError.INCORRECT_COUNTRY]: t("Некорректный регион"),
+        [ValidateProfileError.INCORRECT_USER_DATA]: t(
+            "Имя и фамилия обязательны",
+        ),
+        [ValidateProfileError.NO_DATA]: t("Данные не указаны"),
+        [ValidateProfileError.INCORRECT_AGE]: t("Некорректный возраст"),
+    };
 
     const onChangeFirstname = useCallback(
         (value?: string) => {
@@ -102,6 +115,14 @@ function ProfilePage() {
     return (
         <DynamicModelLoader reducers={reducers} removeAfterUnmount>
             <ProfilePageHeader />
+            {validateErrors?.length &&
+                validateErrors.map((err) => (
+                    <Text
+                        key={err}
+                        theme={TextTheme.ERROR}
+                        text={validateErrorsTranslate[err]}
+                    />
+                ))}
             <ProfileCard
                 data={formData}
                 isLoading={isLoading}

@@ -15,3 +15,4 @@ export { getProfileError } from "./modal/selectors/getProfileError/getProfileErr
 export { getProfileReadonly } from "./modal/selectors/getProfileReadonly/getProfileReadonly";
 export { ProfilePageHeader } from "pages/ProfilePage/ui/ProfilePageHeader/ProfilePageHeader";
 export { getProfileForm } from "./modal/selectors/getProfileForm/getProfileForm";
+export { getProfileValidateErrors } from "./modal/selectors/getProfileValidateError/getProfileValidateError";
