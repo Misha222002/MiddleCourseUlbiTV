@@ -9,6 +9,7 @@ export function buildPlugin({
     paths,
     isDev,
     apiUrl,
+    project,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
     const plugins: (webpack.WebpackPluginInstance | false)[] = [
         isDev && new ReactRefreshWebpackPlugin(),
@@ -21,6 +22,7 @@ export function buildPlugin({
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
             __API__: JSON.stringify(apiUrl) || "http://localhost:8000",
+            __PROJECT__: JSON.stringify(project),
         }),
         isDev &&
             new BundleAnalyzerPlugin({
