@@ -49,6 +49,7 @@ const config: Config = {
         "\\.svg": path.resolve(__dirname, "jestEmptyComponent"),
         // "^entities/(.*)$": "<rootDir>/src/entities/$1",
     },
+    testPathIgnorePatterns: ["<rootDir>/.fttemlates"],
 
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
