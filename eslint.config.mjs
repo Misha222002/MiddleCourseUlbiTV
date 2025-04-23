@@ -12,6 +12,7 @@ const compat = new FlatCompat();
 
 export default [
     { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
+    { ignores: [".fttemplates/**/*"] },
     { languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } } } },
     {
         languageOptions: {
@@ -71,6 +72,7 @@ export default [
             "react-hooks/exhaustive-deps": "error",
             "@typescript-eslint/no-empty-object-type": "off",
         },
+        ignores: [".fttemplates/**"],
     },
     // Переводы не нужны в test
     {
@@ -90,6 +92,12 @@ export default [
         rules: {
             "array-element-newline": ["error", "always"],
         },
+        ignores: [
+            "package.json",
+            ".fttemplates/**",
+            "tsconfig.json",
+            "babel.config.json",
+        ],
     },
     i18next.configs["flat/recommended"],
     eslintPluginPrettierRecommended,

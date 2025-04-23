@@ -32,7 +32,7 @@ const initialReducers: ReducersList = {
 
 const LoginFormComponent = ({ className, onSuccess }: LoginFormProps) => {
     const { t } = useTranslation();
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     const dispatch = useAppDispatch();
     // const { username, password, error, isLoading } = useSelector(getLoginState);
 

@@ -28,6 +28,6 @@
             "module": "CommonJS"
         }
     },
-    "exclude": ["node_modules"],
+    "exclude": ["node_modules", "**/.fttemplates/**"],
     "include": ["./config/jest/jest-setup.ts", "./src/**/*"]
 }
