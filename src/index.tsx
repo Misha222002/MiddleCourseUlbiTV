@@ -24,6 +24,5 @@ root.render(
                 </ThemeProvider>
             </StoreProvider>
         </BrowserRouter>
-        ,
     </ErrorBoundary>,
 );
