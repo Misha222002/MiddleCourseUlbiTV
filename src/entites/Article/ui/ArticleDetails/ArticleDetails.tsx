@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { FC, memo, useEffect } from "react";
+import { FC, memo, useCallback, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import style from "./ArticleDetails.module.scss";
@@ -16,8 +16,19 @@ import {
     getArticleDetailsError,
     getArticleDetailsIsLoading,
 } from "entites/Article/model/selectors/ArticleDetails";
-import { Text, TextAlign } from "shared/ui/Text/Text";
+import { Text, TextAlign, TextSize } from "shared/ui/Text/Text";
 import { Skeleton } from "shared/ui/Skeleton/Skeleton";
+import { Avatar } from "shared/ui/Avatar/Avatar";
+import EyeIcon from "shared/assets/icons/eye-20-20.svg";
+import CalendarIcon from "shared/assets/icons/calendar-20-20.svg";
+import { Icon } from "shared/ui/Icon/Icon";
+import {
+    ArticleBlock,
+    ArticleBlockType,
+} from "entites/Article/model/types/article";
+import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
+import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
+import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 
 interface ArticleDetailsProps {
     className?: string;
@@ -35,9 +46,42 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
     const isLoading = useSelector(getArticleDetailsIsLoading);
     const article = useSelector(getArticleDetailsData);
     const error = useSelector(getArticleDetailsError);
-    console.log("style", style);
+
+    const renderBlock = useCallback((block: ArticleBlock) => {
+        switch (block.type) {
+            case ArticleBlockType.CODE:
+                return (
+                    <ArticleCodeBlockComponent
+                        key={block.id}
+                        block={block}
+                        className={style.block}
+                    />
+                );
+            case ArticleBlockType.IMAGE:
+                return (
+                    <ArticleImageBlockComponent
+                        key={block.id}
+                        block={block}
+                        className={style.block}
+                    />
+                );
+            case ArticleBlockType.TEXT:
+                return (
+                    <ArticleTextBlockComponent
+                        key={block.id}
+                        className={style.block}
+                        block={block}
+                    />
+                );
+            default:
+                return null;
+        }
+    }, []);
+
     useEffect(() => {
-        dispatch(fetchArticleById(id));
+        if (__PROJECT__ !== "storybook") {
+            dispatch(fetchArticleById(id));
+        }
     }, [dispatch, id]);
 
     let content;
@@ -73,7 +117,33 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
             />
         );
     } else {
-        content = <div>ARTICLE DETAILS</div>;
+        content = (
+            <>
+                <div className={style.avatarWrapper}>
+                    <Avatar
+                        size={200}
+                        src={article?.img}
+                        className={style.avatar}
+                    />
+                </div>
+
+                <Text
+                    title={article?.title}
+                    text={article?.subtitle}
+                    className={style.title}
+                    size={TextSize.L}
+                />
+                <div className={style.articleInfo}>
+                    <Icon Svg={EyeIcon} className={style.icon} />
+                    <Text text={String(article?.views)} />
+                </div>
+                <div className={style.articleInfo}>
+                    <Icon Svg={CalendarIcon} className={style.icon} />
+                    <Text text={article?.createdAt} />
+                </div>
+                {article?.blocks.map(renderBlock)}
+            </>
+        );
     }
     return (
         <DynamicModelLoader reducers={reducers} removeAfterUnmount={true}>
