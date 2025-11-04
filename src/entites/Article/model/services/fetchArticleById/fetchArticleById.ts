@@ -8,7 +8,6 @@ export const fetchArticleById = createAsyncThunk<
 >("articleDetails/fetchProfileData", async (articleId, thunkAPI) => {
     const { extra, rejectWithValue } = thunkAPI;
     try {
-        console.log("articleId", articleId);
         const response = await extra.api.get<Article>("/articles/" + articleId);
 
         if (!response.data) {

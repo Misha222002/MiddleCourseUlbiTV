@@ -5,6 +5,7 @@ import { DeepPartial } from "entites/Counter";
 import { loginReducer } from "features/AuthByUsername/model/slice/loginSlice";
 import { profileReducer } from "entites/Profile";
 import { ReducersList } from "shared/lib/components/DynamicModelLoader/DynamicModelLoader";
+import { articleDetailsReducer } from "entites/Article/model/slice/ArticleDetailsSlice";
 
 interface Props {
     children?: React.ReactNode;
@@ -15,6 +16,7 @@ interface Props {
 const defaultAsyncreducers: ReducersList = {
     loginForm: loginReducer,
     profile: profileReducer,
+    articleDetails: articleDetailsReducer,
 };
 
 export const StoreDecorator: FC<Props> = ({
