@@ -5,15 +5,44 @@ import { classNames } from "shared/lib/classNames/classNames";
 import style from "./ArticleDetailsPage.module.scss";
 import { ArticleDetails } from "entites/Article";
 import { useParams } from "react-router-dom";
+import { Text } from "shared/ui";
+import { CommentList } from "entites/Comment";
+import {
+    DynamicModelLoader,
+    ReducersList,
+} from "shared/lib/components/DynamicModelLoader/DynamicModelLoader";
+import {
+    articleDetailsCommentsReducer,
+    getArticleComments,
+} from "pages/ArticleDetailsPage/model/slices/artucleDetailsCommentsSlice";
+import { useSelector } from "react-redux";
+import {
+    getArticleCommentsError,
+    getArticleCommentsIsLoading,
+} from "pages/ArticleDetailsPage/model/selectors/comments";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { fetchCommentsByArticleId } from "pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 
 interface ArticleDetailsPageProps {
     className?: string;
 }
 
+const reducers: ReducersList = {
+    articleDetailsComments: articleDetailsCommentsReducer,
+};
+
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     const { className } = props;
-    const { t } = useTranslation();
     const { id } = useParams<{ id: string }>();
+    const dispatch = useAppDispatch();
+    const comments = useSelector(getArticleComments.selectAll);
+    const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
+    const commentsError = useSelector(getArticleCommentsError);
+
+    useInitialEffect(() => {
+        dispatch(fetchCommentsByArticleId(id));
+    });
 
     if (!id) {
         return (
@@ -28,9 +57,20 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     }
 
     return (
-        <div className={classNames(style.articleDetailsPage, {}, [className])}>
-            <ArticleDetails id={id} />
-        </div>
+        <DynamicModelLoader reducers={reducers} removeAfterUnmount>
+            <div
+                className={classNames(style.articleDetailsPage, {}, [
+                    className,
+                ])}
+            >
+                <ArticleDetails id={id} />
+                <Text className={style.commentTitle} title="Комментарий" />
+                <CommentList
+                    comments={comments}
+                    isLoading={commentsIsLoading}
+                />
+            </div>
+        </DynamicModelLoader>
     );
 };
 
