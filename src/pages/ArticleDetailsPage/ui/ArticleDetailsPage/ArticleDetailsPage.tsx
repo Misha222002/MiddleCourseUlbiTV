@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { FC, memo } from "react";
+import { FC, memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import style from "./ArticleDetailsPage.module.scss";
@@ -23,6 +23,8 @@ import {
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { fetchCommentsByArticleId } from "pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
+import { AddCommentForm } from "features/addCommentForm";
+import { addCommentForArticle } from "pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle";
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -43,6 +45,13 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
     });
+
+    const onSendComment = useCallback(
+        (text: string) => {
+            dispatch(addCommentForArticle(text));
+        },
+        [dispatch],
+    );
 
     if (!id) {
         return (
@@ -65,6 +74,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
             >
                 <ArticleDetails id={id} />
                 <Text className={style.commentTitle} title="Комментарий" />
+                <AddCommentForm onSendComment={onSendComment} />
                 <CommentList
                     comments={comments}
                     isLoading={commentsIsLoading}

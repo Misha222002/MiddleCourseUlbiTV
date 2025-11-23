@@ -22,6 +22,8 @@ import {
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { Text, TextTheme } from "shared/ui/Text/Text";
 import { ValidateProfileError } from "entites/Profile/modal/types/profile";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { useParams } from "react-router-dom";
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -30,6 +32,7 @@ const reducers: ReducersList = {
 function ProfilePage() {
     const { t } = useTranslation("profile");
     const dispatch = useAppDispatch();
+    const { id } = useParams<{ id: string }>();
 
     const formData = useSelector(getProfileForm);
     const isLoading = useSelector(getProfileLoading);
@@ -108,16 +111,19 @@ function ProfilePage() {
         [dispatch],
     );
 
-    useEffect(() => {
-        if (__PROJECT__ !== "storybook") {
-            dispatch(fetchProfileData());
+    useInitialEffect(() => {
+        if (id) {
+            dispatch(fetchProfileData(id));
         }
-    }, [dispatch]);
+    });
+
+    console.log("validates", validateErrors);
 
     return (
         <DynamicModelLoader reducers={reducers} removeAfterUnmount>
             <ProfilePageHeader />
-            {validateErrors?.length &&
+            {validateErrors &&
+                validateErrors?.length > 0 &&
                 validateErrors.map((err) => (
                     <Text
                         key={err}

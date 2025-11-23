@@ -15,6 +15,7 @@ const data = {
     first: "Misha",
     lastname: "Ivanov",
     username: "mvivanov",
+    id: "1",
 };
 
 const mockedAxios = axios as jest.Mocked<typeof axios>;

@@ -17,7 +17,7 @@ interface DynamicModelLoaderProps {
 }
 
 export const DynamicModelLoader: FC<DynamicModelLoaderProps> = (props) => {
-    const { children, reducers, removeAfterUnmount } = props;
+    const { children, reducers, removeAfterUnmount = true } = props;
     const store = useStore() as ReduxStoreWithManager;
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
