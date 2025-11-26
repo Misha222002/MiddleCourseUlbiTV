@@ -8,7 +8,7 @@ import {
 } from "entites/Article/model/types/article";
 
 const meta = {
-    title: "entities/ArticleDetails",
+    title: "entities/Article/ArticleDetails",
     component: ArticleDetails,
     parameters: {
         layout: "fullscreen",
@@ -24,6 +24,11 @@ const article: Article = {
     id: "1",
     title: "Javascript news",
     subtitle: "ЧТо нового в JS За 2025 год",
+    user: {
+        id: "1",
+        username: "misha",
+        avatar: "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+    },
     img: "https://teknotower.com/wp-content/uploads/2020/11/js.png",
     views: 1022,
     createdAt: "26.02.2022",

@@ -1,13 +1,19 @@
-/* eslint-disable */
-import { FC, memo } from "react";
-import { useTranslation } from "react-i18next";
-import { classNames } from "shared/lib/classNames/classNames";
-import style from "./ArticlesPage.module.scss";
-import { Article, ArticleList, ArticleView } from "entites/Article";
+import type { Meta, StoryObj } from "@storybook/react";
+import { Article, ArticleView } from "entites/Article/model/types/article";
+import { ArticleListItem } from "./ArticleListItem";
 
-interface ArticlesPageProps {
-    className?: string;
-}
+const meta = {
+    title: "entities/Article/ArticleListItem",
+    component: ArticleListItem,
+    parameters: {
+        layout: "fullscreen",
+    },
+    tags: ["autodocs"],
+    argTypes: {},
+} satisfies Meta<typeof ArticleListItem>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 const article = {
     id: "1",
@@ -84,20 +90,10 @@ const article = {
     ],
 } as Article;
 
-const ArticlesPage: FC<ArticlesPageProps> = (props) => {
-    const { className } = props;
-    const { t } = useTranslation();
-
-    return (
-        <div className={classNames(style.articlesPage, {}, [className])}>
-            <ArticleList
-                view={ArticleView.BIG}
-                articles={new Array(16)
-                    .fill(0)
-                    .map((item, index) => ({ ...article, id: String(index) }))}
-            />
-        </div>
-    );
+export const Big: Story = {
+    args: { article, view: ArticleView.BIG },
 };
 
-export default memo(ArticlesPage);
+export const Small: Story = {
+    args: { article, view: ArticleView.SMALL },
+};
