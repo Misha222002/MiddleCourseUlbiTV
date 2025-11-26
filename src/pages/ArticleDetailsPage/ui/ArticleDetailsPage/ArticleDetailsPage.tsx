@@ -4,8 +4,8 @@ import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import style from "./ArticleDetailsPage.module.scss";
 import { ArticleDetails } from "entites/Article";
-import { useParams } from "react-router-dom";
-import { Text } from "shared/ui";
+import { useNavigate, useParams } from "react-router-dom";
+import { Button, ButtonTheme, Text } from "shared/ui";
 import { CommentList } from "entites/Comment";
 import {
     DynamicModelLoader,
@@ -25,6 +25,7 @@ import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { fetchCommentsByArticleId } from "pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { AddCommentForm } from "features/addCommentForm";
 import { addCommentForArticle } from "pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle";
+import { RoutePath } from "shared/config/routeConfig/routeConfig";
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -41,10 +42,15 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     const comments = useSelector(getArticleComments.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
     const commentsError = useSelector(getArticleCommentsError);
+    const navigate = useNavigate();
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
     });
+
+    const onBackToList = useCallback(() => {
+        navigate(RoutePath.articles);
+    }, [navigate]);
 
     const onSendComment = useCallback(
         (text: string) => {
@@ -72,6 +78,9 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
                     className,
                 ])}
             >
+                <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
+                    Назад к списку
+                </Button>
                 <ArticleDetails id={id} />
                 <Text className={style.commentTitle} title="Комментарий" />
                 <AddCommentForm onSendComment={onSendComment} />

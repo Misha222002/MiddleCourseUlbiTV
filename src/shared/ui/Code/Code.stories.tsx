@@ -10,7 +10,7 @@ const meta = {
     tags: ["autodocs"],
     argTypes: {},
     args: {},
-} satisfies Meta<typeof Text>;
+} satisfies Meta<typeof Code>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
