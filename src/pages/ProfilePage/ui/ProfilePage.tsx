@@ -24,6 +24,8 @@ import { Text, TextTheme } from "shared/ui/Text/Text";
 import { ValidateProfileError } from "entites/Profile/modal/types/profile";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { useParams } from "react-router-dom";
+import Page from "shared/ui/Page/Page";
+import { classNames } from "shared/lib/classNames/classNames";
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -121,30 +123,32 @@ function ProfilePage() {
 
     return (
         <DynamicModelLoader reducers={reducers} removeAfterUnmount>
-            <ProfilePageHeader />
-            {validateErrors &&
-                validateErrors?.length > 0 &&
-                validateErrors.map((err) => (
-                    <Text
-                        key={err}
-                        theme={TextTheme.ERROR}
-                        text={validateErrorsTranslate[err]}
-                    />
-                ))}
-            <ProfileCard
-                data={formData}
-                isLoading={isLoading}
-                error={error}
-                onChangeFirstname={onChangeFirstname}
-                onChangeLastname={onChangeLastname}
-                onChangeAge={onChangeAge}
-                onChangeCity={onChangeCity}
-                onChangeAvatar={onChangeAvatar}
-                onChangeUsername={onChangeUsername}
-                readonly={readonly}
-                onChangeCurrency={onChangeCurrency}
-                onChangeCountry={onChangeCountry}
-            />
+            <Page>
+                <ProfilePageHeader />
+                {validateErrors &&
+                    validateErrors?.length > 0 &&
+                    validateErrors.map((err) => (
+                        <Text
+                            key={err}
+                            theme={TextTheme.ERROR}
+                            text={validateErrorsTranslate[err]}
+                        />
+                    ))}
+                <ProfileCard
+                    data={formData}
+                    isLoading={isLoading}
+                    error={error}
+                    onChangeFirstname={onChangeFirstname}
+                    onChangeLastname={onChangeLastname}
+                    onChangeAge={onChangeAge}
+                    onChangeCity={onChangeCity}
+                    onChangeAvatar={onChangeAvatar}
+                    onChangeUsername={onChangeUsername}
+                    readonly={readonly}
+                    onChangeCurrency={onChangeCurrency}
+                    onChangeCountry={onChangeCountry}
+                />
+            </Page>
         </DynamicModelLoader>
     );
 }

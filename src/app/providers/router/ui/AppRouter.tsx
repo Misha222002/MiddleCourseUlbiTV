@@ -10,9 +10,7 @@ import { PageLoader } from "shared/ui";
 function AppRouter() {
     const renderWithWrapper = useCallback((route: AppRoutesProps) => {
         const element = (
-            <Suspense fallback={<PageLoader />}>
-                <div className="page_wrapper">{route.element}</div>
-            </Suspense>
+            <Suspense fallback={<PageLoader />}>{route.element}</Suspense>
         );
         return (
             <Route
