@@ -22,18 +22,18 @@ const getSkeletons = (view: ArticleView) => {
 export const ArticleList = (props: ArticleListProps) => {
     const { articles, view = ArticleView.SMALL, isLoading, className } = props;
 
-    if (isLoading) {
-        return (
-            <div
-                className={classNames(style.articleList, {}, [
-                    className,
-                    style[view.toLowerCase()],
-                ])}
-            >
-                {getSkeletons(view)}
-            </div>
-        );
-    }
+    // if (isLoading) {
+    //     return (
+    //         <div
+    //             className={classNames(style.articleList, {}, [
+    //                 className,
+    //                 style[view.toLowerCase()],
+    //             ])}
+    //         >
+    //             {getSkeletons(view)}
+    //         </div>
+    //     );
+    // }
 
     const renderArticle = (article: Article) => {
         return (
@@ -59,6 +59,7 @@ export const ArticleList = (props: ArticleListProps) => {
                 // eslint-disable-next-line i18next/no-literal-string
                 <div>Empty</div>
             )}
+            {isLoading && getSkeletons(view)}
         </div>
     );
 };

@@ -26,6 +26,7 @@ import { fetchCommentsByArticleId } from "pages/ArticleDetailsPage/model/service
 import { AddCommentForm } from "features/addCommentForm";
 import { addCommentForArticle } from "pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
+import Page from "shared/ui/Page/Page";
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -61,19 +62,19 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
     if (!id) {
         return (
-            <div
+            <Page
                 className={classNames(style.articleDetailsPage, {}, [
                     className,
                 ])}
             >
                 Статьи нет
-            </div>
+            </Page>
         );
     }
 
     return (
         <DynamicModelLoader reducers={reducers} removeAfterUnmount>
-            <div
+            <Page
                 className={classNames(style.articleDetailsPage, {}, [
                     className,
                 ])}
@@ -88,7 +89,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
                     comments={comments}
                     isLoading={commentsIsLoading}
                 />
-            </div>
+            </Page>
         </DynamicModelLoader>
     );
 };
