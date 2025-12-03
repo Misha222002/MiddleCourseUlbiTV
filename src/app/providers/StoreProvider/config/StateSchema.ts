@@ -7,6 +7,7 @@ import {
 import { AxiosInstance } from "axios";
 import { ArticleDetailsSchema } from "entites/Article";
 import { CounterSchema } from "entites/Counter";
+import { OptionalRecord } from "entites/Counter/model/types/CounterSchema";
 import { ProfileSchema } from "entites/Profile";
 import { UserSchema } from "entites/User";
 import { AddCommentFormSchema } from "features/addCommentForm";
@@ -27,12 +28,14 @@ export interface StateSchema {
 }
 
 export type StateSchemaKey = keyof StateSchema;
+export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>;
 
 export interface ReducerManager {
     getReducerMap: () => ReducersMapObject<StateSchema>;
     reduce: (state: StateSchema, action: AnyAction) => StateSchema;
     add: (key: StateSchemaKey, reducer: Reducer) => void;
     remove: (key: StateSchemaKey) => void;
+    getMountedReducers: () => MountedReducers;
 }
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
@@ -41,7 +44,6 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
 
 export interface ThunkExtraArg {
     api: AxiosInstance;
-    navigate?: NavigateFunction;
 }
 
 export interface ThunkConfig<T> {

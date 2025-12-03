@@ -119,8 +119,6 @@ function ProfilePage() {
         }
     });
 
-    console.log("validates", validateErrors);
-
     return (
         <DynamicModelLoader reducers={reducers} removeAfterUnmount>
             <Page>

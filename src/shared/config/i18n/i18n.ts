@@ -9,7 +9,8 @@ i18n.use(Backend)
     .use(initReactI18next)
     .init({
         fallbackLng: "ru",
-        debug: __IS_DEV__ ? true : false,
+        // debug: __IS_DEV__ ? true : false,
+        debug: false,
 
         interpolation: {
             escapeValue: false, // not needed for react as it escapes by default
