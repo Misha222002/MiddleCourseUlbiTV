@@ -12,13 +12,14 @@ import { ProfileSchema } from "entites/Profile";
 import { UserSchema } from "entites/User";
 import { AddCommentFormSchema } from "features/addCommentForm";
 import { LoginSchema } from "features/AuthByUsername";
+import { SaveScrollSchema } from "features/saveScroll";
 import { ArticleDetailsCommentsSchema } from "pages/ArticleDetailsPage";
 import { ArticlePageSchema } from "pages/ArticlePage";
-import { NavigateFunction } from "react-router-dom";
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
+    saveScroll: SaveScrollSchema;
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;

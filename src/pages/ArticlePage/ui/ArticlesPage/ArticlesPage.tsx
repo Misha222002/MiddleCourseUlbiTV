@@ -30,7 +30,7 @@ import {
     getArticlesPageNum,
     getArticlesPageView,
 } from "pages/ArticlePage/model/selectors/articlesPageSelector";
-import Page from "shared/ui/Page/Page";
+import Page from "widgets/Page/Page";
 import { fetchNextArticlesPage } from "pages/ArticlePage/model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import { initArticlesPage } from "pages/ArticlePage/model/services/initArticlesPage/initArticlesPage";
 
