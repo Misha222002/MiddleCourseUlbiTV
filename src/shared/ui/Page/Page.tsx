@@ -28,7 +28,10 @@ const Page: FC<PageProps> = (props) => {
             className={classNames(style.page, {}, [className])}
         >
             {children}
-            <div ref={triggerRef} />
+            <div
+                ref={triggerRef}
+                style={{ height: "10px", background: "red" }}
+            />
         </section>
     );
 };

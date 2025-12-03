@@ -24,10 +24,15 @@ export const DynamicModelLoader: FC<DynamicModelLoaderProps> = (props) => {
     const dispatch = useDispatch<any>();
 
     useEffect(() => {
+        const mountedReducers = store.reducerManager.getMountedReducers();
+
         Object.entries(reducers).forEach(([name, reducer]) => {
-            const key = name as StateSchemaKey;
-            store.reducerManager.add(key, reducer);
-            dispatch({ type: `@INIT ${key} reducer` });
+            const mounted = mountedReducers[name as StateSchemaKey];
+            if (!mounted) {
+                const key = name as StateSchemaKey;
+                store.reducerManager.add(key, reducer);
+                dispatch({ type: `@INIT ${key} reducer` });
+            }
         });
         return () => {
             if (removeAfterUnmount) {
