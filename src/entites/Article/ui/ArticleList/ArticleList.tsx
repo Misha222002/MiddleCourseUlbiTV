@@ -3,6 +3,8 @@ import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 import style from "./ArticleList.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
+import { TextSize } from "shared/ui/Text/Text";
+import { Text } from "shared/ui";
 
 interface ArticleListProps {
     className?: string;
@@ -22,18 +24,18 @@ const getSkeletons = (view: ArticleView) => {
 export const ArticleList = (props: ArticleListProps) => {
     const { articles, view = ArticleView.SMALL, isLoading, className } = props;
 
-    // if (isLoading) {
-    //     return (
-    //         <div
-    //             className={classNames(style.articleList, {}, [
-    //                 className,
-    //                 style[view.toLowerCase()],
-    //             ])}
-    //         >
-    //             {getSkeletons(view)}
-    //         </div>
-    //     );
-    // }
+    if (!isLoading && !articles.length) {
+        return (
+            <div
+                className={classNames(style.articleList, {}, [
+                    className,
+                    style[view.toLowerCase()],
+                ])}
+            >
+                <Text size={TextSize.L} title="Статьи не найдены" />
+            </div>
+        );
+    }
 
     const renderArticle = (article: Article) => {
         return (

@@ -3,16 +3,27 @@ import { classNames } from "shared/lib/classNames/classNames";
 
 import style from "./Card.module.scss";
 
+export enum CardTheme {
+    NORMAL = "normal",
+    OUTLINED = "outlined",
+}
+
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
     className?: string;
     children: ReactNode;
+    theme?: CardTheme;
 }
 
 export const Card = (props: CardProps) => {
-    const { className, children, ...otherProps } = props;
+    const {
+        className,
+        children,
+        theme = CardTheme.NORMAL,
+        ...otherProps
+    } = props;
     return (
         <div
-            className={classNames(style.card, {}, [className])}
+            className={classNames(style.card, {}, [className, style[theme]])}
             {...otherProps}
         >
             {children}
