@@ -7,7 +7,6 @@ import { profileReducer } from "entites/Profile";
 import { ReducersList } from "shared/lib/components/DynamicModelLoader/DynamicModelLoader";
 import { articleDetailsReducer } from "entites/Article/model/slice/ArticleDetailsSlice";
 import { addCommentFormReducer } from "features/addCommentForm/model/slice/addCommentFormSlice";
-import { articleDetailsCommentsReducer } from "pages/ArticleDetailsPage/model/slices/artucleDetailsCommentsSlice";
 
 interface Props {
     children?: React.ReactNode;
@@ -20,7 +19,7 @@ const defaultAsyncreducers: ReducersList = {
     profile: profileReducer,
     articleDetails: articleDetailsReducer,
     addCommentForm: addCommentFormReducer,
-    articleDetailsComments: articleDetailsCommentsReducer,
+    articleDetailsPage: articleDetailsReducer,
 };
 
 export const StoreDecorator: FC<Props> = ({

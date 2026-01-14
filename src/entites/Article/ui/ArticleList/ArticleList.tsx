@@ -5,12 +5,14 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
 import { TextSize } from "shared/ui/Text/Text";
 import { Text } from "shared/ui";
+import { HTMLAttributeAnchorTarget } from "react";
 
 interface ArticleListProps {
     className?: string;
     articles: Article[];
     isLoading?: boolean;
     view?: ArticleView;
+    target?: HTMLAttributeAnchorTarget;
 }
 
 const getSkeletons = (view: ArticleView) => {
@@ -22,14 +24,20 @@ const getSkeletons = (view: ArticleView) => {
 };
 
 export const ArticleList = (props: ArticleListProps) => {
-    const { articles, view = ArticleView.SMALL, isLoading, className } = props;
+    const {
+        articles,
+        view = ArticleView.SMALL,
+        isLoading,
+        className,
+        target,
+    } = props;
 
     if (!isLoading && !articles.length) {
         return (
             <div
                 className={classNames(style.articleList, {}, [
-                    className,
                     style[view.toLowerCase()],
+                    className,
                 ])}
             >
                 <Text size={TextSize.L} title="Статьи не найдены" />
@@ -44,6 +52,7 @@ export const ArticleList = (props: ArticleListProps) => {
                 article={article}
                 view={view}
                 key={article.id}
+                target={target}
             />
         );
     };

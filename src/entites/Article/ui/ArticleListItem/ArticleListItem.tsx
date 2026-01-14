@@ -13,28 +13,30 @@ import { Card } from "shared/ui/Card/Card";
 import { useHover } from "shared/lib/hooks/useHover/useHover";
 import { Avatar } from "shared/ui/Avatar/Avatar";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
-import { useCallback } from "react";
+import { HTMLAttributeAnchorTarget, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
+import { AppLink } from "shared/ui/AppLink/AppLink";
 
 interface ArticleListItemProps {
     className?: string;
     article: Article;
     view: ArticleView;
+    target?: HTMLAttributeAnchorTarget;
 }
 
 export const ArticleListItem = (props: ArticleListItemProps) => {
-    const { className, article, view } = props;
+    const { className, article, view, target } = props;
 
     const [isHover, bindHover] = useHover();
     const navigate = useNavigate();
 
-    const onOpenArticle = useCallback(() => {
-        navigate(RoutePath.article_details + article.id);
-    }, [navigate, article.id]);
+    // const onOpenArticle = useCallback(() => {
+    //     navigate(RoutePath.article_details + article.id);
+    // }, [navigate, article.id]);
 
     const types = (
-        <Text text={article.type.join(", ")} className={style.types} />
+        <Text text={article?.type?.join(", ")} className={style.types} />
     );
 
     const views = (
@@ -74,12 +76,14 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
                         />
                     )}
                     <div className={style.footer}>
-                        <Button
-                            onClick={onOpenArticle}
-                            theme={ButtonTheme.OUTLINE}
+                        <AppLink
+                            target={target}
+                            to={RoutePath.article_details + article.id}
                         >
-                            Читать далее...
-                        </Button>
+                            <Button theme={ButtonTheme.OUTLINE}>
+                                Читать далее...
+                            </Button>
+                        </AppLink>
                     </div>
                 </Card>
             </div>
@@ -87,14 +91,16 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
     }
 
     return (
-        <div
+        <AppLink
+            target={target}
             {...bindHover}
+            to={RoutePath.article_details + article.id}
             className={classNames(style.articleListItem, {}, [
                 className,
                 style[view.toLowerCase()],
             ])}
         >
-            <Card onClick={onOpenArticle}>
+            <Card>
                 <div className={style.imageWrapper}>
                     <img src={article.img} className={style.img} />
                     <Text text={article.createdAt} className={style.date} />
@@ -105,6 +111,6 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
                 </div>
                 <Text text={article.title} className={style.title} />
             </Card>
-        </div>
+        </AppLink>
     );
 };
