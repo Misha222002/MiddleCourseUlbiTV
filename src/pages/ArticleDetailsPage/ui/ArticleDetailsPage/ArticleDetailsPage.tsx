@@ -38,6 +38,7 @@ import {
 } from "../../model/slices/articleDetailsPageRecommendationsSlice";
 import { fetchArticleRecommendations } from "pages/ArticleDetailsPage/model/services/fetchArticleRecommendations.ts/fetchArticleRecommendations.ts";
 import { articleDetailsReducer } from "pages/ArticleDetailsPage/model/slices";
+import ArticleDetailsPageHeader from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -66,10 +67,6 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
         dispatch(fetchArticleRecommendations());
     });
 
-    const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles);
-    }, [navigate]);
-
     const onSendComment = useCallback(
         (text: string) => {
             dispatch(addCommentForArticle(text));
@@ -96,9 +93,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
                     className,
                 ])}
             >
-                <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
-                    Назад к списку
-                </Button>
+                <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
                 <Text
                     size={TextSize.L}
