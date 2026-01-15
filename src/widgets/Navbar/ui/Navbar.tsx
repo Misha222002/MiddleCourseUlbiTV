@@ -1,3 +1,4 @@
+/* eslint-disable i18next/no-literal-string */
 import { classNames } from "shared/lib/classNames/classNames";
 import style from "./Navbar.module.scss";
 import { useTranslation } from "react-i18next";
@@ -6,6 +7,9 @@ import { memo, useCallback, useState } from "react";
 import { LoginModal } from "features/AuthByUsername";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserAuthData, userActions } from "entites/User";
+import { Text, TextTheme } from "shared/ui/Text/Text";
+import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
+import { RoutePath } from "shared/config/routeConfig/routeConfig";
 
 interface NavbarProps {
     className?: string;
@@ -35,6 +39,18 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     if (authData) {
         return (
             <header className={classNames(style.navbar, {}, [className])}>
+                <Text
+                    className={style.appName}
+                    theme={TextTheme.INVERTED}
+                    title={"Misha Ivanov"}
+                />
+                <AppLink
+                    to={RoutePath.article_create}
+                    theme={AppLinkTheme.INVERTED}
+                    className={style.createBtn}
+                >
+                    Создать статью
+                </AppLink>
                 <Button
                     onClick={onLogout}
                     theme={ButtonTheme.CLEAR_INVERTED}
