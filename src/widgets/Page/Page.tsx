@@ -20,8 +20,8 @@ interface PageProps {
 const Page: FC<PageProps> = (props) => {
     const { className, children, onScrollEnd } = props;
 
-    const wrapperRef = useRef() as RefObject<HTMLDivElement>;
-    const triggerRef = useRef() as RefObject<HTMLDivElement>;
+    const wrapperRef = useRef(null) as unknown as RefObject<HTMLDivElement>;
+    const triggerRef = useRef(null) as unknown as RefObject<HTMLDivElement>;
 
     const dispatch = useAppDispatch();
     const { pathname } = useLocation();
