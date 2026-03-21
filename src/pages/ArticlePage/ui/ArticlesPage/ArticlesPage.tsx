@@ -24,10 +24,7 @@ import { fetchArticlesList } from "pages/ArticlePage/model/services/fetchArticle
 import { useSelector } from "react-redux";
 import {
     getArticlesPageError,
-    getArticlesPageHasMore,
-    getArticlesPageInited,
     getArticlesPageIsLoading,
-    getArticlesPageNum,
     getArticlesPageView,
 } from "pages/ArticlePage/model/selectors/articlesPageSelector";
 import Page from "widgets/Page/Page";
