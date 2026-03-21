@@ -2,7 +2,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import style from "./Sidebar.module.scss";
 import { memo, useState } from "react";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
-import LanguageSwitcher from "shared/ui/LanguageSwithcher/LanguageSwitcher";
+import LanguageSwitcher from "widgets/LanguageSwithcher/LanguageSwitcher";
 import { Button, ButtonTheme } from "shared/ui";
 import { ButtonSize } from "shared/ui/Button/Button";
 import { SidebarItem } from "widgets/Sidebar/ui/SidebatItem/SidebarItem";

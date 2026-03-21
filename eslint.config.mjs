@@ -5,6 +5,7 @@ import pluginReactConfig from "eslint-plugin-react/configs/recommended.js";
 import { fixupConfigRules } from "@eslint/compat";
 import i18next from "eslint-plugin-i18next";
 import jest from "eslint-plugin-jest";
+import myCustomPlugin from "eslint-plugin-import-path-correct";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 import { FlatCompat } from "@eslint/eslintrc";
 
@@ -38,6 +39,9 @@ export default [
         },
     },
     {
+        plugins: {
+            "custom-plugin": myCustomPlugin,
+        },
         rules: {
             "react/jsx-indent": [2, 4],
             "react/jsx-indent-props": [2, 4],
@@ -71,6 +75,7 @@ export default [
             "react-hooks/rules-of-hooks": "error",
             "react-hooks/exhaustive-deps": "error",
             "@typescript-eslint/no-empty-object-type": "off",
+            "custom-plugin/path-checker": "warn",
         },
         ignores: [".fttemplates/**"],
     },

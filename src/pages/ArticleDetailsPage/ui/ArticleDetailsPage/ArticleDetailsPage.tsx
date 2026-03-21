@@ -5,7 +5,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import style from "./ArticleDetailsPage.module.scss";
 import { ArticleDetails, ArticleList } from "entites/Article";
 import { useNavigate, useParams } from "react-router-dom";
-import { Button, ButtonTheme, Text } from "shared/ui";
+import { Text } from "shared/ui";
 import { CommentList } from "entites/Comment";
 import {
     DynamicModelLoader,

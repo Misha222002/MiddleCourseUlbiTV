@@ -9,7 +9,6 @@ import {
     getArticlesPageSort,
     getArticlesPageType,
 } from "../../selectors/articlesPageSelector";
-import { articlesPageAction } from "../../slice/articlePageSlice";
 import { addQueryParams } from "shared/lib/url/addQueryParams/addQueryParams";
 import { ArticleType } from "entites/Article/model/types/article";
 
