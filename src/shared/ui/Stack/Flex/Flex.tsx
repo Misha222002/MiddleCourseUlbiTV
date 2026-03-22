@@ -1,5 +1,4 @@
-import { FC, ReactNode } from "react";
-import { useTranslation } from "react-i18next";
+import { DetailedHTMLProps, FC, HTMLAttributes, ReactNode } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import style from "./Flex.module.scss";
 
@@ -33,7 +32,12 @@ const gapClasses: Record<FlexGap, string> = {
     "32": style.gap32,
 };
 
-export interface FlexProps {
+type DivProps = DetailedHTMLProps<
+    HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+>;
+
+export interface FlexProps extends DivProps {
     className?: string;
     children: ReactNode;
     justify?: FlexJustify;
