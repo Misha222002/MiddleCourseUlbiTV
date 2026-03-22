@@ -40,7 +40,7 @@ export const CurrencySelect = (props: CurrencySelectProps) => {
             value={value}
             items={options}
             readonly={readonly}
-            direction="top"
+            direction="top right"
         />
     );
 };
