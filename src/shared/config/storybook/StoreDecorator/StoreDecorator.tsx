@@ -3,10 +3,10 @@ import "app/styles/index.scss";
 import { StateSchema, StoreProvider } from "app/providers/StoreProvider";
 import { DeepPartial } from "entites/Counter";
 import { loginReducer } from "features/AuthByUsername/model/slice/loginSlice";
-import { profileReducer } from "entites/Profile";
 import { ReducersList } from "shared/lib/components/DynamicModelLoader/DynamicModelLoader";
 import { articleDetailsReducer } from "entites/Article/model/slice/ArticleDetailsSlice";
 import { addCommentFormReducer } from "features/addCommentForm/model/slice/addCommentFormSlice";
+import { profileReducer } from "features/editableProfileCard/model/slice/profileSlice";
 
 interface Props {
     children?: React.ReactNode;
