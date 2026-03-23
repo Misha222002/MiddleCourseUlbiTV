@@ -5,6 +5,7 @@ import { counterReducer } from "entites/Counter";
 import { createReducerManager } from "app/providers/StoreProvider/config/reducerManager";
 import { $api } from "shared/api/api";
 import { saveScrollReducer } from "features/saveScroll";
+import { rtkApi } from "shared/api/rtkApi";
 
 export function createReduxStore(
     initialState?: StateSchema,
@@ -15,6 +16,7 @@ export function createReduxStore(
         counter: counterReducer,
         user: userReducer,
         saveScroll: saveScrollReducer,
+        [rtkApi.reducerPath]: rtkApi.reducer,
     };
 
     const reducerManager = createReducerManager(rootReducers);
@@ -30,7 +32,7 @@ export function createReduxStore(
         middleware: (getDefaultMiddleware) =>
             getDefaultMiddleware({
                 thunk: { extraArgument: extraArgs },
-            }),
+            }).concat(rtkApi.middleware),
     });
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment

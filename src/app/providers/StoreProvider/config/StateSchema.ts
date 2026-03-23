@@ -19,9 +19,12 @@ import { ArticlesDetailsPageSchema } from "pages/ArticleDetailsPage";
 //     ArticleDetailsRecommendationsSchema,
 // } from "pages/ArticleDetailsPage";
 import { ArticlePageSchema } from "pages/ArticlePage";
+import { rtkApi } from "shared/api/rtkApi";
 
 export interface StateSchema {
     counter: CounterSchema;
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
+
     user: UserSchema;
     saveScroll: SaveScrollSchema;
     loginForm?: LoginSchema;

@@ -1,7 +1,7 @@
 import { StateSchema } from "app/providers/StoreProvider";
 import { DeepPartial } from "entites/Counter";
 import { getProfileValidateErrors } from "./getProfileValidateError";
-import { ValidateProfileError } from "entites/Profile/modal/types/profile";
+import { ValidateProfileError } from "../../types/editableProfileCardSchema";
 
 describe("getProfileValidateError.test", () => {
     test("should return error", () => {
