@@ -51,6 +51,18 @@ const config: Config = {
     },
     testPathIgnorePatterns: ["<rootDir>/.fttemlates"],
 
+    reporters: [
+        "default",
+        [
+            "jest-html-reporters",
+            {
+                publicPath: "<rootDir>/reports/unit",
+                filename: "report.html",
+                openReport: true,
+            },
+        ],
+    ],
+
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
 
