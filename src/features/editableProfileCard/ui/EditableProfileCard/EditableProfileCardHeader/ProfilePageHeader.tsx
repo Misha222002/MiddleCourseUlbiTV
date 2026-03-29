@@ -47,6 +47,7 @@ export const ProfilePageHeader = (props: ProfilePageHeader) => {
                             onClick={onEdit}
                             className={style.editBtn}
                             theme={ButtonTheme.OUTLINE}
+                            data-testid={"ProfilePageHeader.EditButton"}
                         >
                             {t("Редактировать")}
                         </Button>
@@ -56,6 +57,7 @@ export const ProfilePageHeader = (props: ProfilePageHeader) => {
                                 onClick={onCancelEdit}
                                 className={style.editBtn}
                                 theme={ButtonTheme.OUTLINE_RED}
+                                data-testid={"ProfilePageHeader.CancelButton"}
                             >
                                 {t("Отменить")}
                             </Button>
@@ -63,6 +65,7 @@ export const ProfilePageHeader = (props: ProfilePageHeader) => {
                                 onClick={onSave}
                                 className={style.saveBtn}
                                 theme={ButtonTheme.OUTLINE}
+                                data-testid={"ProfilePageHeader.SaveButton"}
                             >
                                 {t("Сохранить")}
                             </Button>

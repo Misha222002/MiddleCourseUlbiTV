@@ -6,7 +6,7 @@ import {
 } from "../types/editableProfileCardSchema";
 import { Currency } from "entites/Currency";
 import { Country } from "entites/Country";
-import { updateProfileData } from "entites/Profile/modal/services/updateProfileData/updateProfileData";
+import { updateProfileData } from "../services/updateProfileData/updateProfileData";
 
 const data = {
     age: 22,
