@@ -1,12 +1,15 @@
 import type { Preview } from "@storybook/react";
-import React from "react";
 import "../../src/app/styles/index.scss";
 import { Theme } from "../../src/app/providers/ThemeProvider";
-
+import { initialize, mswLoader } from "msw-storybook-addon";
 import {
     RouterDecorator,
     ThemeDecorator,
+    SuspenseDecorator,
 } from "../../src/shared/config/storybook/index";
+
+initialize();
+
 const preview: Preview = {
     parameters: {
         controls: {
@@ -16,11 +19,14 @@ const preview: Preview = {
             },
         },
     },
+    loaders: [mswLoader],
     decorators: [
         (Story) => (
             <RouterDecorator>
                 <ThemeDecorator theme={Theme.LIGHT}>
-                    <Story />
+                    <SuspenseDecorator>
+                        <Story />
+                    </SuspenseDecorator>
                 </ThemeDecorator>
             </RouterDecorator>
         ),
