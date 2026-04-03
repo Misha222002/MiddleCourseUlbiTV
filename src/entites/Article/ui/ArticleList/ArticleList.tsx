@@ -1,4 +1,4 @@
-import { Article, ArticleView } from "entites/Article";
+import { Article, ArticleView } from "../../model/types/article";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 import style from "./ArticleList.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";

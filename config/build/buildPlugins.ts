@@ -5,6 +5,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import CopyPlugin from "copy-webpack-plugin";
+import CircularDependencyPlugin from "circular-dependency-plugin";
 
 export function buildPlugin({
     paths,
@@ -33,6 +34,14 @@ export function buildPlugin({
         isDev &&
             new BundleAnalyzerPlugin({
                 openAnalyzer: false,
+            }),
+        isDev &&
+            new CircularDependencyPlugin({
+                exclude: /node_modules/,
+                // include: /dir/,
+                failOnError: true,
+                // allowAsyncCycles: false,
+                // cwd: process.cwd(),
             }),
     ];
 

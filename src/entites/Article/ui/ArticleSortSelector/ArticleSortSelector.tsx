@@ -1,9 +1,8 @@
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { FC, memo, useCallback, useMemo } from "react";
-
+import { ArticleSortField } from "entites/Article";
 import style from "./ArticleSortSelector.module.scss";
 import { Select, SelectOption } from "shared/ui/Select/Select";
-import { ArticleSortField } from "entites/Article/model/types/article";
 import { SortOrder } from "shared/types";
 
 interface ArticleSortSelectorProps {
