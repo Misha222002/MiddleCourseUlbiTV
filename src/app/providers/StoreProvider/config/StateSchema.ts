@@ -8,10 +8,10 @@ import { AxiosInstance } from "axios";
 import { ArticleDetailsSchema } from "entites/Article";
 import { CounterSchema } from "entites/Counter";
 import { OptionalRecord } from "entites/Counter/model/types/CounterSchema";
-import { ProfileSchema } from "entites/Profile";
 import { UserSchema } from "entites/User";
 import { AddCommentFormSchema } from "features/addCommentForm";
 import { LoginSchema } from "features/AuthByUsername";
+import { ProfileSchema } from "features/editableProfileCard";
 import { SaveScrollSchema } from "features/saveScroll";
 import { ArticlesDetailsPageSchema } from "pages/ArticleDetailsPage";
 // import {

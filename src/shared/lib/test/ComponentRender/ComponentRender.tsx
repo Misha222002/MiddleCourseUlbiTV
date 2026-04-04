@@ -1,3 +1,4 @@
+import { ReducersMapObject } from "@reduxjs/toolkit";
 import { render } from "@testing-library/react";
 import { StateSchema, StoreProvider } from "app/providers/StoreProvider";
 import { DeepPartial } from "entites/Counter";
@@ -21,7 +22,7 @@ export function componentRender(
         <MemoryRouter initialEntries={[route]}>
             <StoreProvider
                 asyncReducers={asyncReducers}
-                initialState={initialState as StateSchema}
+                initialState={initialState as DeepPartial<StateSchema>}
             >
                 <I18nextProvider i18n={i18n}>{component}</I18nextProvider>
             </StoreProvider>

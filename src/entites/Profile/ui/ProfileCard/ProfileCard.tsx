@@ -3,7 +3,6 @@ import style from "./ProfileCard.module.scss";
 import { useTranslation } from "react-i18next";
 import { Text, TextAlign, TextTheme } from "shared/ui/Text/Text";
 import { Input } from "shared/ui/Input/Input";
-import { ProfileSchema } from "features/editableProfileCard/model/types/editableProfileCardSchema";
 import { Loader } from "shared/ui/Loader/Loader";
 import { Avatar } from "shared/ui/Avatar/Avatar";
 import { Currency } from "entites/Currency/model/types/currency";
