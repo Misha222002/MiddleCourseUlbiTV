@@ -5,7 +5,10 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { Fragment } from "react/jsx-runtime";
 import { ReactNode } from "react";
 import { DropdownDirection } from "shared/types/ui";
-import { AppLink } from "../AppLink/AppLink";
+import { AppLink } from "../../../AppLink/AppLink";
+import { mapDirectionClass } from "../../styles/consts";
+
+import popupStyles from "../../styles/popup.module.scss";
 
 interface DropdownItem {
     disabled?: boolean;
@@ -21,21 +24,20 @@ interface DropdownProps {
     direction?: DropdownDirection;
 }
 
-const mapDirectionClass: Record<DropdownDirection, string> = {
-    "bottom left": style.optionsBottomLeft,
-    "bottom right": style.optionsBottomRight,
-    "top left": style.optionsTopLeft,
-    "top right": style.optionsTopRight,
-};
-
-const Dropdown = (props: DropdownProps) => {
+export const Dropdown = (props: DropdownProps) => {
     const { className, items, trigger, direction = "bottom right" } = props;
 
     const menuClasses = [mapDirectionClass[direction]];
 
     return (
-        <Menu as="div" className={classNames(style.dropdown, {}, [className])}>
-            <MenuButton className={style.btn}>{trigger}</MenuButton>
+        <Menu
+            as="div"
+            className={classNames(style.dropdown, {}, [
+                className,
+                popupStyles.popup,
+            ])}
+        >
+            <MenuButton className={popupStyles.trigger}>{trigger}</MenuButton>
             <MenuItems
                 anchor="bottom"
                 className={classNames(style.menu, {}, menuClasses)}
@@ -47,7 +49,7 @@ const Dropdown = (props: DropdownProps) => {
                             disabled={item.disabled}
                             onClick={item.onClick}
                             className={classNames(style.item, {
-                                [style.active]: focus,
+                                [popupStyles.active]: focus,
                             })}
                         >
                             {item.content}
@@ -81,4 +83,4 @@ const Dropdown = (props: DropdownProps) => {
     );
 };
 
-export default Dropdown;
+// export Dropdown;
