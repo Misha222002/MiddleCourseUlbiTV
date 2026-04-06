@@ -9,6 +9,9 @@
     pointer-events: none;
     z-index: 0;
     color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal.dark {
