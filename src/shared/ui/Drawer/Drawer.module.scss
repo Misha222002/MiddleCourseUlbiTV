@@ -7,7 +7,7 @@
     left: 0;
     opacity: 0;
     pointer-events: none;
-    z-index: -1;
+    z-index: 99;
     display: flex;
     align-items: flex-end;
 }
@@ -45,8 +45,15 @@
     pointer-events: auto;
     opacity: 1;
     z-index: var(--modal-z-index);
+}
 
-    .content {
-        transform: translateY(0%);
-    }
+.sheet {
+    z-index: var(--modal-z-index);
+    position: fixed;
+    left: 2vw;
+    height: calc(100vh + 100px);
+    width: 96vw;
+    border-radius: 12px 12px 0px;
+    background: #fff;
+    touch-action: none;
 }

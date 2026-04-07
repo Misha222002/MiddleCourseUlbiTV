@@ -9,6 +9,7 @@ import { Drawer } from "shared/ui/Drawer/Drawer";
 import { BrowserView, MobileView } from "react-device-detect";
 
 import style from "./NotificationListButton.module.scss";
+import { AnimationProvider } from "shared/lib/components/AnimationProvider";
 
 interface NotificationListButtonProps {
     className?: string;
@@ -50,9 +51,11 @@ export const NotificationListButton: FC<NotificationListButtonProps> = (
             </BrowserView>
             <MobileView>
                 {trigger}
-                <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
-                    <NotificationList />
-                </Drawer>
+                <AnimationProvider>
+                    <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+                        <NotificationList />
+                    </Drawer>
+                </AnimationProvider>
             </MobileView>
         </div>
     );
