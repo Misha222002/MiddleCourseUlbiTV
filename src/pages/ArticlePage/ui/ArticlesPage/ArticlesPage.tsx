@@ -1,35 +1,35 @@
 /* eslint-disable */
 import { FC, memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import style from "./ArticlesPage.module.scss";
 import {
     Article,
     ArticleList,
     ArticleView,
     ArticleViewSelector,
-} from "entites/Article";
+} from "@/entites/Article";
 import {
     DynamicModelLoader,
     ReducersList,
-} from "shared/lib/components/DynamicModelLoader/DynamicModelLoader";
+} from "@/shared/lib/components/DynamicModelLoader/DynamicModelLoader";
 import {
     articlePageReducer,
     articlesPageAction,
     getArticles,
-} from "pages/ArticlePage/model/slice/articlePageSlice";
-import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { fetchArticlesList } from "pages/ArticlePage/model/services/fetchArticlesList/fetchArticlesList";
+} from "@/pages/ArticlePage/model/slice/articlePageSlice";
+import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { fetchArticlesList } from "@/pages/ArticlePage/model/services/fetchArticlesList/fetchArticlesList";
 import { useSelector } from "react-redux";
 import {
     getArticlesPageError,
     getArticlesPageIsLoading,
     getArticlesPageView,
-} from "pages/ArticlePage/model/selectors/articlesPageSelector";
-import Page from "widgets/Page/Page";
-import { fetchNextArticlesPage } from "pages/ArticlePage/model/services/fetchNextArticlesPage/fetchNextArticlesPage";
-import { initArticlesPage } from "pages/ArticlePage/model/services/initArticlesPage/initArticlesPage";
+} from "@/pages/ArticlePage/model/selectors/articlesPageSelector";
+import Page from "@/widgets/Page/Page";
+import { fetchNextArticlesPage } from "@/pages/ArticlePage/model/services/fetchNextArticlesPage/fetchNextArticlesPage";
+import { initArticlesPage } from "@/pages/ArticlePage/model/services/initArticlesPage/initArticlesPage";
 import ArticlesFilters from "../ArticlesFilters/ArticlesFilters";
 import { useSearchParams } from "react-router-dom";
 

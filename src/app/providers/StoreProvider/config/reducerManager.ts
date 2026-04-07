@@ -10,8 +10,8 @@ import {
     StateSchema,
     StateSchemaKey,
 } from "./StateSchema";
-import { CounterSchema } from "entites/Counter";
-import { UserSchema } from "entites/User";
+import { CounterSchema } from "@/entites/Counter";
+import { UserSchema } from "@/entites/User";
 
 export function createReducerManager(
     initialReducers: ReducersMapObject<StateSchema>,

@@ -1,31 +1,31 @@
 /* eslint-disable */
 import { FC, memo, useCallback, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import style from "./ArticleDetails.module.scss";
 import {
     DynamicModelLoader,
     ReducersList,
-} from "shared/lib/components/DynamicModelLoader/DynamicModelLoader";
+} from "@/shared/lib/components/DynamicModelLoader/DynamicModelLoader";
 import { articleDetailsReducer } from "../../model/slice/ArticleDetailsSlice";
-import { fetchArticleById } from "entites/Article/model/services/fetchArticleById/fetchArticleById";
+import { fetchArticleById } from "@/entites/Article/model/services/fetchArticleById/fetchArticleById";
 import { useDispatch, useSelector } from "react-redux";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {
     getArticleDetailsData,
     getArticleDetailsError,
     getArticleDetailsIsLoading,
-} from "entites/Article/model/selectors/ArticleDetails";
-import { Text, TextAlign, TextSize } from "shared/ui/Text/Text";
-import { Skeleton } from "shared/ui/Skeleton/Skeleton";
-import { Avatar } from "shared/ui/Avatar/Avatar";
-import EyeIcon from "shared/assets/icons/eye-20-20.svg";
-import CalendarIcon from "shared/assets/icons/calendar-20-20.svg";
-import { Icon } from "shared/ui/Icon/Icon";
+} from "@/entites/Article/model/selectors/ArticleDetails";
+import { Text, TextAlign, TextSize } from "@/shared/ui/Text/Text";
+import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
+import { Avatar } from "@/shared/ui/Avatar/Avatar";
+import EyeIcon from "@/shared/assets/icons/eye-20-20.svg";
+import CalendarIcon from "@/shared/assets/icons/calendar-20-20.svg";
+import { Icon } from "@/shared/ui/Icon/Icon";
 import {
     ArticleBlock,
     ArticleBlockType,
-} from "entites/Article/model/types/article";
+} from "@/entites/Article/model/types/article";
 import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";

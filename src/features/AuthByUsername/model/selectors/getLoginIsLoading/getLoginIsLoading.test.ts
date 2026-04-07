@@ -1,6 +1,6 @@
 import { getLoginIsLoading } from "./getLoginIsLoading";
-import { StateSchema } from "app/providers/StoreProvider";
-import { DeepPartial } from "entites/Counter";
+import { StateSchema } from "@/app/providers/StoreProvider";
+import { DeepPartial } from "@/entites/Counter";
 
 describe("getLoginIsLoading.test", () => {
     test("should return true", () => {

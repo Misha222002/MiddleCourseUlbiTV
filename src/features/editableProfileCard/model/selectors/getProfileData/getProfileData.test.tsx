@@ -1,8 +1,8 @@
-import { StateSchema } from "app/providers/StoreProvider";
-import { DeepPartial } from "entites/Counter";
+import { StateSchema } from "@/app/providers/StoreProvider";
+import { DeepPartial } from "@/entites/Counter";
 import { getProfileData } from "./getProfileData";
-import { Currency } from "entites/Currency";
-import { Country } from "entites/Country";
+import { Currency } from "@/entites/Currency";
+import { Country } from "@/entites/Country";
 
 describe("getProfileData.test", () => {
     test("should return error", () => {

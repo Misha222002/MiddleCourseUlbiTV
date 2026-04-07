@@ -1,7 +1,7 @@
-import { classNames, Mods } from "shared/lib/classNames/classNames";
+import { classNames, Mods } from "@/shared/lib/classNames/classNames";
 import style from "./Modal.module.scss";
 import { ReactNode, useCallback, useEffect, useRef, useState } from "react";
-import { useTheme } from "app/providers/ThemeProvider";
+import { useTheme } from "@/app/providers/ThemeProvider";
 import { Portal } from "../Portal/Portal";
 import { Overlay } from "../Overlay/Overlay";
 

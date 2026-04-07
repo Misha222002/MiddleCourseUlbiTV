@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import "app/styles/index.scss";
-import { Theme, ThemeProvider } from "app/providers/ThemeProvider";
+import "@/app/styles/index.scss";
+import { Theme, ThemeProvider } from "@/app/providers/ThemeProvider";
 
 interface Props {
     children?: React.ReactNode;

@@ -1,10 +1,10 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { useGetNotificationsQuery } from "../../api/notificationApi";
-import { VStack } from "shared/ui/Stack";
+import { VStack } from "@/shared/ui/Stack";
 import { NotificationItem } from "../NotificationItem/NotificationItem";
-import { Skeleton } from "shared/ui/Skeleton/Skeleton";
+import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
 
 interface NotificationListProps {
     className?: string;

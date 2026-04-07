@@ -2,21 +2,21 @@ import {
     Article,
     ArticleBlockType,
     ArticleView,
-} from "entites/Article/model/types/article";
+} from "@/entites/Article/model/types/article";
 
 import style from "./ArticleListItem.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
-import { Button, ButtonTheme, Text } from "shared/ui";
-import { Icon } from "shared/ui/Icon/Icon";
-import EyeIcon from "shared/assets/icons/eye-20-20.svg";
-import { Card } from "shared/ui/Card/Card";
-import { useHover } from "shared/lib/hooks/useHover/useHover";
-import { Avatar } from "shared/ui/Avatar/Avatar";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Button, ButtonTheme, Text } from "@/shared/ui";
+import { Icon } from "@/shared/ui/Icon/Icon";
+import EyeIcon from "@/shared/assets/icons/eye-20-20.svg";
+import { Card } from "@/shared/ui/Card/Card";
+import { useHover } from "@/shared/lib/hooks/useHover/useHover";
+import { Avatar } from "@/shared/ui/Avatar/Avatar";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import { HTMLAttributeAnchorTarget, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import { RoutePath } from "shared/config/routeConfig/routeConfig";
-import { AppLink } from "shared/ui/AppLink/AppLink";
+import { RoutePath } from "@/shared/config/routeConfig/routeConfig";
+import { AppLink } from "@/shared/ui/AppLink/AppLink";
 
 interface ArticleListItemProps {
     className?: string;
