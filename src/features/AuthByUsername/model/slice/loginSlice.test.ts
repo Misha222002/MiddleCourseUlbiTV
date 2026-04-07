@@ -1,9 +1,9 @@
-import { DeepPartial } from "entites/Counter";
+import { DeepPartial } from "@/entites/Counter";
 import {
     loginActions,
     loginReducer,
-} from "features/AuthByUsername/model/slice/loginSlice";
-import { LoginSchema } from "features/AuthByUsername/model/types/loginSchema";
+} from "@/features/AuthByUsername/model/slice/loginSlice";
+import { LoginSchema } from "@/features/AuthByUsername/model/types/loginSchema";
 
 describe("loginSlice.test", () => {
     test("set username", () => {

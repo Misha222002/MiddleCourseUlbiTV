@@ -1,19 +1,19 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import style from "./ArticleInfinityList.module.scss";
-import { ArticleList } from "entites/Article";
-import { initArticlesPage } from "pages/ArticlePage/model/services/initArticlesPage/initArticlesPage";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { ArticleList } from "@/entites/Article";
+import { initArticlesPage } from "@/pages/ArticlePage/model/services/initArticlesPage/initArticlesPage";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useSelector } from "react-redux";
-import { getArticles } from "pages/ArticlePage/model/slice/articlePageSlice";
+import { getArticles } from "@/pages/ArticlePage/model/slice/articlePageSlice";
 import {
     getArticlesPageError,
     getArticlesPageIsLoading,
     getArticlesPageView,
-} from "pages/ArticlePage/model/selectors/articlesPageSelector";
+} from "@/pages/ArticlePage/model/selectors/articlesPageSelector";
 import { useSearchParams } from "react-router-dom";
-import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 
 interface ArticleInfinityListProps {
     className?: string;

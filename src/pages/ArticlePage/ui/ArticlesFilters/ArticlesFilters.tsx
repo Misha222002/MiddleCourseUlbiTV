@@ -1,30 +1,30 @@
-import { ArticleView, ArticleViewSelector } from "entites/Article";
+import { ArticleView, ArticleViewSelector } from "@/entites/Article";
 import {
     getArticlesPageOrder,
     getArticlesPageSearch,
     getArticlesPageSort,
     getArticlesPageType,
     getArticlesPageView,
-} from "pages/ArticlePage/model/selectors/articlesPageSelector";
-import { articlesPageAction } from "pages/ArticlePage/model/slice/articlePageSlice";
+} from "@/pages/ArticlePage/model/selectors/articlesPageSelector";
+import { articlesPageAction } from "@/pages/ArticlePage/model/slice/articlePageSlice";
 import { FC, memo, useCallback, useMemo } from "react";
 import { useSelector } from "react-redux";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Select } from "shared/ui/Select/Select";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { Select } from "@/shared/ui/Select/Select";
 
 import style from "./ArticlesFilters.module.scss";
-import { Card } from "shared/ui/Card/Card";
-import { Input } from "shared/ui/Input/Input";
-import ArticleSortSelector from "entites/Article/ui/ArticleSortSelector/ArticleSortSelector";
-import { SortOrder } from "shared/types";
+import { Card } from "@/shared/ui/Card/Card";
+import { Input } from "@/shared/ui/Input/Input";
+import ArticleSortSelector from "@/entites/Article/ui/ArticleSortSelector/ArticleSortSelector";
+import { SortOrder } from "@/shared/types";
 import {
     ArticleSortField,
     ArticleType,
-} from "entites/Article/model/types/article";
-import { fetchArticlesList } from "pages/ArticlePage/model/services/fetchArticlesList/fetchArticlesList";
-import { useDebounce } from "shared/lib/hooks/useDebaunce/useDebounce";
-import { TabItem, Tabs } from "shared/ui/Tabs/Tabs";
-import { ArticleTypeTabs } from "entites/Article/ui/ArticleTypeTabs/ArticleTypeTabs";
+} from "@/entites/Article/model/types/article";
+import { fetchArticlesList } from "@/pages/ArticlePage/model/services/fetchArticlesList/fetchArticlesList";
+import { useDebounce } from "@/shared/lib/hooks/useDebaunce/useDebounce";
+import { TabItem, Tabs } from "@/shared/ui/Tabs/Tabs";
+import { ArticleTypeTabs } from "@/entites/Article/ui/ArticleTypeTabs/ArticleTypeTabs";
 
 interface ArticlesFiltersProps {
     className?: string;

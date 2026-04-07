@@ -4,8 +4,8 @@ import {
     Article,
     ArticleBlockType,
     ArticleType,
-} from "entites/Article/model/types/article";
-import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
+} from "@/entites/Article/model/types/article";
+import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 
 const meta = {
     title: "pages/ArticleDetailsPage",

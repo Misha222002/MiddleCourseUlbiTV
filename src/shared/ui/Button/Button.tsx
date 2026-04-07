@@ -1,4 +1,4 @@
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import style from "./Button.module.scss";
 import { ButtonHTMLAttributes, FC, memo, ReactNode } from "react";
 

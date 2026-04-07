@@ -1,6 +1,6 @@
 import { DeepPartial } from "./../../../../entites/Counter/model/types/CounterSchema";
 import { AsyncThunkAction } from "@reduxjs/toolkit";
-import { StateSchema } from "app/providers/StoreProvider";
+import { StateSchema } from "@/app/providers/StoreProvider";
 import { AxiosStatic } from "axios";
 import axios from "axios";
 

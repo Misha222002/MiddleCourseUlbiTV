@@ -5,7 +5,7 @@ import {
     ArticleBlockType,
     ArticleType,
     ArticleView,
-} from "entites/Article/model/types/article";
+} from "@/entites/Article/model/types/article";
 
 const meta = {
     title: "entities/Article/ArticleList",

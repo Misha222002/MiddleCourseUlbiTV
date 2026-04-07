@@ -1,5 +1,5 @@
-import { StateSchema } from "app/providers/StoreProvider";
-import { DeepPartial } from "entites/Counter";
+import { StateSchema } from "@/app/providers/StoreProvider";
+import { DeepPartial } from "@/entites/Counter";
 import { getProfileLoading } from "./getProfileLoading";
 
 describe("getProfileLoading.test", () => {

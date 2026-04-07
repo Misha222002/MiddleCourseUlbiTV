@@ -1,5 +1,5 @@
-import { StateSchema } from "app/providers/StoreProvider";
-import { DeepPartial } from "entites/Counter";
+import { StateSchema } from "@/app/providers/StoreProvider";
+import { DeepPartial } from "@/entites/Counter";
 import { getLoginError } from "./getLoginError";
 
 describe("getLoginError.test", () => {

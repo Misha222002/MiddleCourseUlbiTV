@@ -1,4 +1,4 @@
-import { OptionalRecord } from "entites/Counter/model/types/CounterSchema";
+import { OptionalRecord } from "@/entites/Counter/model/types/CounterSchema";
 
 export function getQueryParams(params: OptionalRecord<string, string>) {
     const searchParams = new URLSearchParams(window.location.search);

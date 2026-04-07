@@ -1,6 +1,6 @@
 import { getLoginUsername } from "./getLoginUsername";
-import { StateSchema } from "app/providers/StoreProvider";
-import { DeepPartial } from "entites/Counter";
+import { StateSchema } from "@/app/providers/StoreProvider";
+import { DeepPartial } from "@/entites/Counter";
 
 describe("getLoginIsLoading.test", () => {
     test("should return username", () => {

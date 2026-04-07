@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 
 import style from "./Icon.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
 interface IconProps {
     className?: string;

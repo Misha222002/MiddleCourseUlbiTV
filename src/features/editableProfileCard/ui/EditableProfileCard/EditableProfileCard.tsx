@@ -1,30 +1,30 @@
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import cls from "./EditableProfileCard.module.scss";
 import { memo, useCallback } from "react";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { TextTheme, Text } from "shared/ui/Text/Text";
+import { TextTheme, Text } from "@/shared/ui/Text/Text";
 import { getProfileForm } from "../../model/selectors/getProfileForm/getProfileForm";
-import { getProfileLoading } from "features/editableProfileCard/model/selectors/getProfileLoading/getProfileLoading";
-import { getProfileError } from "features/editableProfileCard/model/selectors/getProfileError/getProfileError";
-import { getProfileReadonly } from "features/editableProfileCard/model/selectors/getProfileReadonly/getProfileReadonly";
-import { getProfileValidateErrors } from "features/editableProfileCard/model/selectors/getProfileValidateError/getProfileValidateError";
-import { ValidateProfileError } from "features/editableProfileCard/model/types/editableProfileCardSchema";
+import { getProfileLoading } from "@/features/editableProfileCard/model/selectors/getProfileLoading/getProfileLoading";
+import { getProfileError } from "@/features/editableProfileCard/model/selectors/getProfileError/getProfileError";
+import { getProfileReadonly } from "@/features/editableProfileCard/model/selectors/getProfileReadonly/getProfileReadonly";
+import { getProfileValidateErrors } from "@/features/editableProfileCard/model/selectors/getProfileValidateError/getProfileValidateError";
+import { ValidateProfileError } from "@/features/editableProfileCard/model/types/editableProfileCardSchema";
 import {
     profileActions,
     profileReducer,
-} from "features/editableProfileCard/model/slice/profileSlice";
-import { Currency } from "entites/Currency";
-import { Country } from "entites/Country";
-import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { fetchProfileData } from "features/editableProfileCard/model/services/fetchProfileData/fetchProfileData";
-import { ProfileCard } from "entites/Profile";
+} from "@/features/editableProfileCard/model/slice/profileSlice";
+import { Currency } from "@/entites/Currency";
+import { Country } from "@/entites/Country";
+import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { fetchProfileData } from "@/features/editableProfileCard/model/services/fetchProfileData/fetchProfileData";
+import { ProfileCard } from "@/entites/Profile";
 import {
     DynamicModelLoader,
     ReducersList,
-} from "shared/lib/components/DynamicModelLoader/DynamicModelLoader";
+} from "@/shared/lib/components/DynamicModelLoader/DynamicModelLoader";
 import { ProfilePageHeader } from "./EditableProfileCardHeader/ProfilePageHeader";
 
 interface EditableProfileCardProps {

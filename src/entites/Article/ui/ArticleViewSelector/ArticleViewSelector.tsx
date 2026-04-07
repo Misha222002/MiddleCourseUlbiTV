@@ -1,9 +1,9 @@
-import { ArticleView } from "entites/Article/model/types/article";
-import ListIcon from "shared/assets/icons/list-24-24.svg";
-import TiledIcon from "shared/assets/icons/tiled-24-24.svg";
-import { classNames } from "shared/lib/classNames/classNames";
-import { Button, ButtonTheme } from "shared/ui";
-import { Icon } from "shared/ui/Icon/Icon";
+import { ArticleView } from "@/entites/Article/model/types/article";
+import ListIcon from "@/shared/assets/icons/list-24-24.svg";
+import TiledIcon from "@/shared/assets/icons/tiled-24-24.svg";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Button, ButtonTheme } from "@/shared/ui";
+import { Icon } from "@/shared/ui/Icon/Icon";
 
 import style from "./ArticleViewSelector.module.scss";
 
