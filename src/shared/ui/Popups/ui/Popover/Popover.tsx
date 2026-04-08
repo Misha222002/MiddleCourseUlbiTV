@@ -31,7 +31,7 @@ export const Popover: FC<PopoverProps> = (props) => {
                 popupStyles.popup,
             ])}
         >
-            <PopoverButton className={popupStyles.trigger}>
+            <PopoverButton as="div" className={popupStyles.trigger}>
                 {trigger}
             </PopoverButton>
             <PopoverPanel
