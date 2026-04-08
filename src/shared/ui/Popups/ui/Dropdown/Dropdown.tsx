@@ -42,7 +42,7 @@ export const Dropdown = (props: DropdownProps) => {
                 anchor="bottom"
                 className={classNames(style.menu, {}, menuClasses)}
             >
-                {items.map((item) => {
+                {items.map((item, key) => {
                     const content = ({ focus }: { focus: boolean }) => (
                         <button
                             type="button"
@@ -70,7 +70,7 @@ export const Dropdown = (props: DropdownProps) => {
                     }
                     return (
                         <MenuItem
-                            key={item.href}
+                            key={"dropdown-item" + key}
                             as={Fragment}
                             disabled={item.disabled}
                         >
