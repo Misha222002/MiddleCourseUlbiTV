@@ -19,7 +19,7 @@ export const StarRating: FC<StarRatingProps> = (props) => {
     const { t } = useTranslation();
 
     //  const [isHovered, setIsHovered] = useState(false);
-    const [currentStarCount, setCurrentStarCount] = useState(0);
+    const [currentStarCount, setCurrentStarCount] = useState(selectedStars);
     const [isSelected, setIsSelected] = useState(!!selectedStars);
 
     const onHover = (starsCount: number) => () => {
