@@ -20,14 +20,22 @@ interface RatingProps {
     hasFeedback?: boolean;
     onCancel?: (starsCount: number) => void;
     onAccept?: (starsCount: number, feedback?: string) => void;
+    rate?: number;
 }
 
 export const Rating: FC<RatingProps> = (props) => {
-    const { className, feedbackTitle, hasFeedback, onAccept, onCancel, title } =
-        props;
+    const {
+        className,
+        feedbackTitle,
+        hasFeedback,
+        onAccept,
+        onCancel,
+        title,
+        rate = 0,
+    } = props;
     const { t } = useTranslation();
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [startCount, setStarsCount] = useState(0);
+    const [starsCount, setStarsCount] = useState(rate);
     const [feedback, setFeedback] = useState("");
 
     const onSelectStars = useCallback(
@@ -44,13 +52,13 @@ export const Rating: FC<RatingProps> = (props) => {
 
     const acceptHandle = useCallback(() => {
         setIsModalOpen(false);
-        onAccept?.(startCount, feedback);
-    }, [feedback, onAccept, startCount]);
+        onAccept?.(starsCount, feedback);
+    }, [feedback, onAccept, starsCount]);
 
     const cancelHandle = useCallback(() => {
         setIsModalOpen(false);
-        onAccept?.(startCount);
-    }, [onAccept, startCount]);
+        onAccept?.(starsCount);
+    }, [onAccept, starsCount]);
 
     const modalContent = (
         <VStack gap="32">
@@ -70,10 +78,14 @@ export const Rating: FC<RatingProps> = (props) => {
     );
 
     return (
-        <Card className={classNames(style.rating, {}, [className])}>
+        <Card max className={classNames(style.rating, {}, [className])}>
             <VStack align={"center"} gap="8">
-                <Text title={title} />
-                <StarRating size={40} onSelect={onSelectStars} />
+                <Text title={starsCount ? "Спасибо за оценку!" : title} />
+                <StarRating
+                    selectedStars={starsCount}
+                    size={40}
+                    onSelect={onSelectStars}
+                />
             </VStack>
             <BrowserView>
                 <Modal isOpen={isModalOpen}>{modalContent}</Modal>

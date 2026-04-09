@@ -660,5 +660,43 @@
       "username": "Misha Ivanov",
       "avatar": "https://www.shkolazhizni.ru/img/content/i156/156707_or.jpg"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "1",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "1",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "articleId": "3",
+      "rate": 3,
+      "userId": "1",
+      "id": "_c7OIP4"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "1",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "1",
+      "userId": "1",
+      "profileId": "2"
+    }
   ]
 }
