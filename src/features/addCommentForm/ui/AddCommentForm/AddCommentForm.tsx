@@ -9,12 +9,12 @@ import { useSelector } from "react-redux";
 import {
     getAddCommentFormError,
     getAddCommentFormText,
-} from "@/features/addCommentForm/model/selectors/addCommentFormSelectors";
+} from "../../model/selectors/addCommentFormSelectors";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {
     addCommentFormActions,
     addCommentFormReducer,
-} from "@/features/addCommentForm/model/slice/addCommentFormSlice";
+} from "../../model/slice/addCommentFormSlice";
 import {
     DynamicModelLoader,
     ReducersList,
