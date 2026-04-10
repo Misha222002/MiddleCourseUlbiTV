@@ -75,7 +75,7 @@ export default [
             "react-hooks/rules-of-hooks": "error",
             "react-hooks/exhaustive-deps": "error",
             "@typescript-eslint/no-empty-object-type": "off",
-            "custom-plugin/path-checker": "warn",
+            "custom-plugin/path-checker": ["error", { alias: "@" }],
         },
         ignores: [".fttemplates/**"],
     },
