@@ -76,6 +76,7 @@ export default [
             "react-hooks/exhaustive-deps": "error",
             "@typescript-eslint/no-empty-object-type": "off",
             "custom-plugin/path-checker": ["error", { alias: "@" }],
+            "custom-plugin/publick-api-imports": ["error", { alias: "@" }],
         },
         ignores: [".fttemplates/**"],
     },
