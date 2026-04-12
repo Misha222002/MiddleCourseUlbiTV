@@ -15,7 +15,7 @@ import { Avatar } from "@/shared/ui/Avatar/Avatar";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import { HTMLAttributeAnchorTarget, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import { RoutePath } from "@/shared/config/routeConfig/routeConfig";
+import { RoutePath } from "@/app/providers/router/config/routeConfig";
 import { AppLink } from "@/shared/ui/AppLink/AppLink";
 
 interface ArticleListItemProps {
