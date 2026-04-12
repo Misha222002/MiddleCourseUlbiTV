@@ -1,7 +1,7 @@
 /* eslint-disable i18next/no-literal-string */
 import { FC, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import { RoutePath } from "@/shared/config/routeConfig/routeConfig";
+import { RoutePath } from "@/app/providers/router/config/routeConfig";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "@/shared/ui";
 

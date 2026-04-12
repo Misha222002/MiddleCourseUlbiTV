@@ -7,7 +7,7 @@ import { ArticlesPage } from "@/pages/ArticlePage";
 import { ForbiddenPage } from "@/pages/ForbiddenPage";
 import { MainPage } from "@/pages/MainPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
-import ProfilePage from "@/pages/ProfilePage/ui/ProfilePage";
+import { ProfilePage } from "@/pages/ProfilePage";
 import { RouteProps } from "react-router-dom";
 
 export type AppRoutesProps = RouteProps & {
