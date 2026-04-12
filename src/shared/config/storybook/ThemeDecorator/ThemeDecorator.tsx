@@ -1,6 +1,9 @@
 import React, { FC } from "react";
+// eslint-disable-next-line custom-plugin/layer-imports
 import "@/app/styles/index.scss";
-import { Theme, ThemeProvider } from "@/app/providers/ThemeProvider";
+// eslint-disable-next-line custom-plugin/layer-imports
+import { ThemeProvider } from "@/app/providers/ThemeProvider";
+import { Theme } from "@/shared/lib/context/ThemeContext";
 
 interface Props {
     children?: React.ReactNode;

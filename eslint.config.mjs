@@ -87,6 +87,13 @@ export default [
                     ],
                 },
             ],
+            "custom-plugin/layer-imports": [
+                "error",
+                {
+                    alias: "@",
+                    ignoreImportPatterns: ["**/StoreProvider", "**/testing"],
+                },
+            ],
         },
         ignores: [".fttemplates/**"],
     },
