@@ -1,9 +1,11 @@
 import React, { FC } from "react";
+// eslint-disable-next-line custom-plugin/layer-imports
 import "@/app/styles/index.scss";
 import { StateSchema, StoreProvider } from "@/app/providers/StoreProvider";
-import { DeepPartial } from "@/entites/Counter";
 import { loginReducer } from "@/features/AuthByUsername/testing";
 import { ReducersList } from "@/shared/lib/components/DynamicModelLoader/DynamicModelLoader";
+// eslint-disable-next-line custom-plugin/layer-imports
+import { DeepPartial } from "@/entites/Counter";
 import { articleDetailsReducer } from "@/entites/Article/testing";
 import { addCommentFormReducer } from "@/features/addCommentForm/testing";
 import { profileReducer } from "@/features/editableProfileCard/testing";

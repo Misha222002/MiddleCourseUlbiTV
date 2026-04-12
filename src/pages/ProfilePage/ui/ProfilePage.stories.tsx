@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { ThemeDecorator } from "@/shared/config/storybook";
-import { Theme } from "@/app/providers/ThemeProvider";
 import ProfilePage from "./ProfilePage";
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 import AvatarImg from "@/shared/assets/tests/storybook.jpg";
 import { Country } from "@/entites/Country";
 import { Currency } from "@/entites/Currency";
+import { Theme } from "@/shared/lib/context/ThemeContext";
 
 const meta = {
     title: "pages/ProfilePage",
