@@ -48,6 +48,7 @@ const config: Config = {
     moduleNameMapper: {
         "\\.(s?css)$": "identity-obj-proxy",
         "\\.svg": path.resolve(__dirname, "jestEmptyComponent"),
+        "^@/(.*)$": "<rootDir>/src/$1",
         // "^entities/(.*)$": "<rootDir>/src/entities/$1",
     },
     testPathIgnorePatterns: ["<rootDir>/.fttemlates"],
