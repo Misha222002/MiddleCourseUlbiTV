@@ -1,13 +1,14 @@
+import { withThemeByClassName } from "@storybook/addon-themes";
 import type { Preview } from "@storybook/react";
-import "../../src/app/styles/index.scss";
 import { initialize, mswLoader } from "msw-storybook-addon";
 
 import {
     RouterDecorator,
-    ThemeDecorator,
     SuspenseDecorator,
 } from "../../src/shared/config/storybook/index";
 import { Theme } from "../../src/shared/lib/context/ThemeContext";
+
+import "../../src/app/styles/index.scss";
 
 initialize();
 
@@ -22,13 +23,21 @@ const preview: Preview = {
     },
     loaders: [mswLoader],
     decorators: [
+        withThemeByClassName({
+            themes: {
+                light: `app ${Theme.LIGHT}`,
+                dark: `app ${Theme.DARK}`,
+                orange: `app ${Theme.ORANGE}`,
+            },
+            defaultTheme: "light",
+            // Provider: ThemeProvider,
+            // GlobalStyles: CssBaseline, // Uncomment if you have global styles
+        }),
         (Story) => (
             <RouterDecorator>
-                <ThemeDecorator theme={Theme.LIGHT}>
-                    <SuspenseDecorator>
-                        <Story />
-                    </SuspenseDecorator>
-                </ThemeDecorator>
+                <SuspenseDecorator>
+                    <Story />
+                </SuspenseDecorator>
             </RouterDecorator>
         ),
     ],
