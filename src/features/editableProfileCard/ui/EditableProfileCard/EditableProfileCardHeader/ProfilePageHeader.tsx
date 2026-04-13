@@ -1,16 +1,18 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
-import style from "./ProfilePageHeader.module.scss";
+import { useCallback } from "react";
+
 import { useTranslation } from "react-i18next";
-import { Button, ButtonTheme, Text } from "@/shared/ui";
 import { useSelector } from "react-redux";
 
-import { useCallback } from "react";
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { getUserAuthData } from "@/entites/User";
 import { getProfileData } from "@/features/editableProfileCard/model/selectors/getProfileData/getProfileData";
 import { getProfileReadonly } from "@/features/editableProfileCard/model/selectors/getProfileReadonly/getProfileReadonly";
-import { profileActions } from "@/features/editableProfileCard/model/slice/profileSlice";
 import { updateProfileData } from "@/features/editableProfileCard/model/services/updateProfileData/updateProfileData";
+import { profileActions } from "@/features/editableProfileCard/model/slice/profileSlice";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { Button, ButtonTheme, Text } from "@/shared/ui";
+
+import style from "./ProfilePageHeader.module.scss";
 
 interface ProfilePageHeader {
     className?: string;

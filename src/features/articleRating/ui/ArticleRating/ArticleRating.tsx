@@ -1,14 +1,16 @@
 import { FC, useCallback } from "react";
+
 import { useTranslation } from "react-i18next";
-import { classNames } from "@/shared/lib/classNames/classNames";
+import { useSelector } from "react-redux";
+
 import { Rating } from "@/entites/Rating";
+import { getUserAuthData } from "@/entites/User";
+import { Skeleton } from "@/shared/ui/Skeleton";
+
 import {
     useGetArticleRatingQuery,
     useRateArticleMutation,
 } from "../../api/rtkApi";
-import { useSelector } from "react-redux";
-import { getUserAuthData } from "@/entites/User";
-import { Skeleton } from "@/shared/ui/Skeleton";
 
 export interface ArticleRatingProps {
     className?: string;

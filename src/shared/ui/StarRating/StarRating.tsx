@@ -1,6 +1,9 @@
 import { FC, useState } from "react";
+
 import { useTranslation } from "react-i18next";
+
 import { classNames } from "@/shared/lib/classNames/classNames";
+
 import style from "./StarRating.module.scss";
 import StarIcon from "../../assets/icons/star.svg";
 import { Icon } from "../Icon/Icon";

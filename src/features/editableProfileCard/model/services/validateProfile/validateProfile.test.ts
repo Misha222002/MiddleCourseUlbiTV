@@ -1,7 +1,7 @@
-import axios from "axios";
-import { validateProfileData } from "./validateProfile";
 import { Country } from "@/entites/Country";
 import { Currency } from "@/entites/Currency";
+
+import { validateProfileData } from "./validateProfile";
 import { ValidateProfileError } from "../../types/editableProfileCardSchema";
 
 const data = {

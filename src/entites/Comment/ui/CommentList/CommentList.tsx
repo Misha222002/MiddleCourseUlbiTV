@@ -1,10 +1,11 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
 import { memo } from "react";
+
 import { Comment } from "@/entites/Comment/model/types/comment";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { Text } from "@/shared/ui";
-import { CommentCard } from "../CommentCard/CommentCard";
 
 import style from "./CommentList.module.scss";
+import { CommentCard } from "../CommentCard/CommentCard";
 
 interface CommentListProps {
     className?: string;

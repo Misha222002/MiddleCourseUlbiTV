@@ -1,24 +1,26 @@
 /* eslint-disable i18next/no-literal-string */
 import { memo, useCallback } from "react";
-import { classNames } from "@/shared/lib/classNames/classNames";
 
-import style from "./AddCommentForm.module.scss";
-import { Input } from "@/shared/ui/Input";
-import { Button, ButtonTheme } from "@/shared/ui";
 import { useSelector } from "react-redux";
-import {
-    getAddCommentFormError,
-    getAddCommentFormText,
-} from "../../model/selectors/addCommentFormSelectors";
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import {
-    addCommentFormActions,
-    addCommentFormReducer,
-} from "../../model/slice/addCommentFormSlice";
+
+import { classNames } from "@/shared/lib/classNames/classNames";
 import {
     DynamicModelLoader,
     ReducersList,
 } from "@/shared/lib/components/DynamicModelLoader/DynamicModelLoader";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { Button, ButtonTheme } from "@/shared/ui";
+import { Input } from "@/shared/ui/Input";
+
+import style from "./AddCommentForm.module.scss";
+import {
+    getAddCommentFormError,
+    getAddCommentFormText,
+} from "../../model/selectors/addCommentFormSelectors";
+import {
+    addCommentFormActions,
+    addCommentFormReducer,
+} from "../../model/slice/addCommentFormSlice";
 
 export interface AddCommentFormProps {
     className?: string;

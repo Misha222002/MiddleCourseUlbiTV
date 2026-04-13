@@ -1,5 +1,6 @@
-import { Button } from "@/shared/ui";
 import { useEffect, useState } from "react";
+
+import { Button } from "@/shared/ui";
 
 //Компонент для тестирования ErrorBoundary
 export const BugButton = () => {

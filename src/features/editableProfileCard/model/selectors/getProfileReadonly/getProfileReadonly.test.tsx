@@ -1,5 +1,6 @@
 import { StateSchema } from "@/app/providers/StoreProvider";
 import { DeepPartial } from "@/entites/Counter";
+
 import { getProfileReadonly } from "./getProfileReadonly";
 
 describe("getProfileReadonly.test", () => {

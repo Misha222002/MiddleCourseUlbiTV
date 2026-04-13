@@ -1,5 +1,6 @@
 import { StateSchema } from "@/app/providers/StoreProvider";
 import { DeepPartial } from "@/entites/Counter";
+
 import { getProfileError } from "./getProfileError";
 
 describe("getProfileError.test", () => {

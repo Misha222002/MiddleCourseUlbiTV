@@ -1,9 +1,11 @@
-import { classNames, Mods } from "@/shared/lib/classNames/classNames";
-import style from "./Modal.module.scss";
 import { ReactNode, useCallback, useEffect, useRef, useState } from "react";
-import { Portal } from "../Portal/Portal";
-import { Overlay } from "../Overlay/Overlay";
+
 import { useTheme } from "@/app/providers/ThemeProvider";
+import { classNames, Mods } from "@/shared/lib/classNames/classNames";
+
+import style from "./Modal.module.scss";
+import { Overlay } from "../Overlay/Overlay";
+import { Portal } from "../Portal/Portal";
 
 interface ModalProps {
     className?: string;

@@ -1,10 +1,12 @@
-import { RequireAuth } from "@/app/providers/router/ui/RequireAuth";
 import { memo, Suspense, useCallback } from "react";
+
 import { Route, Routes } from "react-router-dom";
+
 import {
     AppRoutesProps,
     routeConfig,
 } from "@/app/providers/router/config/routeConfig";
+import { RequireAuth } from "@/app/providers/router/ui/RequireAuth";
 import { PageLoader } from "@/shared/ui";
 
 function AppRouter() {

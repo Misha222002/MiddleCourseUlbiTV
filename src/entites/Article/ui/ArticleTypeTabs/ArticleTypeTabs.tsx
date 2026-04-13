@@ -1,7 +1,8 @@
-import { ArticleType } from "@/entites/Article/model/types/article";
-import { TabItem, Tabs } from "@/shared/ui/Tabs";
 import { useCallback, useMemo } from "react";
+
+import { ArticleType } from "@/entites/Article/model/types/article";
 import { classNames } from "@/shared/lib/classNames/classNames";
+import { TabItem, Tabs } from "@/shared/ui/Tabs";
 
 interface ArticleTypeTabsProps {
     className?: string;

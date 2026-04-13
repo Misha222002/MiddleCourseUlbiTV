@@ -1,10 +1,13 @@
-import { classNames } from "../shared/lib/classNames/classNames";
-import { AppRouter } from "./providers/router";
+import { Suspense, useEffect } from "react";
+
+import { useDispatch, useSelector } from "react-redux";
+
+import { getUserInited, userActions } from "@/entites/User";
 import { Navbar } from "@/widgets/Navbar";
 import { Sidebar } from "@/widgets/Sidebar";
-import { Suspense, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getUserInited, userActions } from "@/entites/User";
+
+import { AppRouter } from "./providers/router";
+import { classNames } from "../shared/lib/classNames/classNames";
 
 const App = () => {
     const dispatch = useDispatch();

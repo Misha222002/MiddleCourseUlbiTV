@@ -1,8 +1,10 @@
 import axios from "axios";
-import { updateProfileData } from "./updateProfileData";
-import { TestAsyncThunk } from "@/shared/lib/test/TestAsyncThunk/TestAsynkThunk";
+
 import { Country } from "@/entites/Country";
 import { Currency } from "@/entites/Currency";
+import { TestAsyncThunk } from "@/shared/lib/test/TestAsyncThunk/TestAsynkThunk";
+
+import { updateProfileData } from "./updateProfileData";
 import { ValidateProfileError } from "../../types/editableProfileCardSchema";
 
 jest.mock("axios");

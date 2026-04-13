@@ -1,4 +1,5 @@
 import { CounterSchema } from "@/entites/Counter/model/types/CounterSchema";
+
 import { counterReducer, counterActions } from "./counterSlice";
 
 describe("counterSlice", () => {

@@ -1,7 +1,10 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
-import style from "./AppLink.module.scss";
+import { ForwardedRef, forwardRef, memo, ReactNode } from "react";
+
 import { Link, LinkProps } from "react-router-dom";
-import { FC, ForwardedRef, forwardRef, memo, ReactNode } from "react";
+
+import { classNames } from "@/shared/lib/classNames/classNames";
+
+import style from "./AppLink.module.scss";
 
 export enum AppLinkTheme {
     PRIMARY = "primary",

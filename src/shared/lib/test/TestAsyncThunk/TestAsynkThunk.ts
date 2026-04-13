@@ -1,8 +1,9 @@
-import { DeepPartial } from "./../../../../entites/Counter/model/types/CounterSchema";
 import { AsyncThunkAction } from "@reduxjs/toolkit";
+import axios, { AxiosStatic } from "axios";
+
 import { StateSchema } from "@/app/providers/StoreProvider";
-import { AxiosStatic } from "axios";
-import axios from "axios";
+
+import { DeepPartial } from "./../../../../entites/Counter/model/types/CounterSchema";
 
 type ActionCreatorType<Return, Arg, RejectedValue> = (
     arg: Arg,

@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+
 // eslint-disable-next-line custom-plugin/layer-imports
 import "@/app/styles/index.scss";
 // eslint-disable-next-line custom-plugin/layer-imports

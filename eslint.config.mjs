@@ -8,6 +8,9 @@ import jest from "eslint-plugin-jest";
 import myCustomPlugin from "eslint-plugin-import-path-correct";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 import { FlatCompat } from "@eslint/eslintrc";
+import unusedImports from "eslint-plugin-unused-imports";
+import importPlugin from "eslint-plugin-import";
+import js from "@eslint/js";
 
 const compat = new FlatCompat();
 
@@ -30,6 +33,8 @@ export default [
     ...tseslint.configs.recommended,
     ...fixupConfigRules(pluginReactConfig),
     ...compat.extends("plugin:react-hooks/recommended"),
+    js.configs.recommended,
+    importPlugin.flatConfigs.recommended,
     {
         files: ["**/*.test.{js,mjs,cjs,ts,jsx,tsx}"],
         ...jest.configs["flat/recommended"],
@@ -41,8 +46,10 @@ export default [
     {
         plugins: {
             "custom-plugin": myCustomPlugin,
+            "unused-imports": unusedImports,
         },
         rules: {
+            "unused-imports/no-unused-imports": "error",
             "react/jsx-indent": [2, 4],
             "react/jsx-indent-props": [2, 4],
             indent: [2, 4],
@@ -105,9 +112,39 @@ export default [
         },
     },
     {
+        files: ["**/*.{js,mjs,cjs,ts,tsx}"],
         languageOptions: {
             ecmaVersion: "latest",
             sourceType: "module",
+        },
+        rules: {
+            "no-unused-vars": "off",
+            "import/no-dynamic-require": "warn",
+            "import/no-nodejs-modules": "warn",
+            "import/order": [
+                "error",
+                {
+                    groups: ["builtin", "external", "internal"],
+                    pathGroups: [
+                        {
+                            pattern: "react",
+                            group: "external",
+                            position: "before",
+                        },
+                        {
+                            pattern: "@/**",
+                            group: "external",
+                            position: "after",
+                        },
+                    ],
+                    pathGroupsExcludedImportTypes: ["react"],
+                    "newlines-between": "always",
+                    alphabetize: {
+                        order: "asc",
+                        caseInsensitive: true,
+                    },
+                },
+            ],
         },
     },
     {

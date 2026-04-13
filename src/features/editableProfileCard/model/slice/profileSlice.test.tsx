@@ -1,12 +1,13 @@
 import { DeepPartial } from "@/entites/Counter";
+import { Country } from "@/entites/Country";
+import { Currency } from "@/entites/Currency";
+
 import { profileActions, profileReducer } from "./profileSlice";
+import { updateProfileData } from "../services/updateProfileData/updateProfileData";
 import {
     ProfileSchema,
     ValidateProfileError,
 } from "../types/editableProfileCardSchema";
-import { Currency } from "@/entites/Currency";
-import { Country } from "@/entites/Country";
-import { updateProfileData } from "../services/updateProfileData/updateProfileData";
 
 const data = {
     age: 22,
