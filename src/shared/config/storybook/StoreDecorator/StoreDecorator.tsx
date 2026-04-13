@@ -1,6 +1,6 @@
+/* eslint-disable custom-plugin/layer-imports */
 import React, { FC } from "react";
 
-// eslint-disable-next-line custom-plugin/layer-imports
 import "@/app/styles/index.scss";
 import { StateSchema, StoreProvider } from "@/app/providers/StoreProvider";
 import { articleDetailsReducer } from "@/entites/Article/testing";
