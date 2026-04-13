@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { CSSProperties, FC } from "react";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import style from "./Skeleton.module.scss";

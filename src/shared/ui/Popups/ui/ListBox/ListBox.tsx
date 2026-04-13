@@ -8,7 +8,7 @@ import { Fragment, ReactNode } from "react";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { DropdownDirection } from "@/shared/types/ui";
 import { HStack } from "@/shared/ui/Stack";
-import { Button } from "@/shared/ui/Button/Button";
+import { Button } from "@/shared/ui/Button";
 import { mapDirectionClass } from "../../styles/consts";
 
 import style from "./ListBox.module.scss";

@@ -7,8 +7,8 @@ import { memo, useCallback, useState } from "react";
 import { LoginModal } from "@/features/AuthByUsername";
 import { useSelector } from "react-redux";
 import { getUserAuthData } from "@/entites/User";
-import { Text, TextTheme } from "@/shared/ui/Text/Text";
-import { AppLink, AppLinkTheme } from "@/shared/ui/AppLink/AppLink";
+import { Text, TextTheme } from "@/shared/ui/Text";
+import { AppLink, AppLinkTheme } from "@/shared/ui/AppLink";
 import { RoutePath } from "@/app/providers/router/config/routeConfig";
 import { HStack } from "@/shared/ui/Stack";
 

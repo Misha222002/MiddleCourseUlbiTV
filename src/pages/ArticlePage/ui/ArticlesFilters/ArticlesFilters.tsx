@@ -10,11 +10,11 @@ import { articlesPageAction } from "@/pages/ArticlePage/model/slice/articlePageS
 import { FC, memo, useCallback, useMemo } from "react";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Select } from "@/shared/ui/Select/Select";
+import { Select } from "@/shared/ui/Select";
 
 import style from "./ArticlesFilters.module.scss";
-import { Card } from "@/shared/ui/Card/Card";
-import { Input } from "@/shared/ui/Input/Input";
+import { Card } from "@/shared/ui/Card";
+import { Input } from "@/shared/ui/Input";
 import ArticleSortSelector from "@/entites/Article/ui/ArticleSortSelector/ArticleSortSelector";
 import { SortOrder } from "@/shared/types";
 import {
@@ -23,7 +23,7 @@ import {
 } from "@/entites/Article/model/types/article";
 import { fetchArticlesList } from "@/pages/ArticlePage/model/services/fetchArticlesList/fetchArticlesList";
 import { useDebounce } from "@/shared/lib/hooks/useDebaunce/useDebounce";
-import { TabItem, Tabs } from "@/shared/ui/Tabs/Tabs";
+import { TabItem, Tabs } from "@/shared/ui/Tabs";
 import { ArticleTypeTabs } from "@/entites/Article/ui/ArticleTypeTabs/ArticleTypeTabs";
 
 interface ArticlesFiltersProps {

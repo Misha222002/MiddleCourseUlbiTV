@@ -10,7 +10,7 @@ import {
     isUserManager,
     userActions,
 } from "@/entites/User";
-import { Avatar } from "@/shared/ui/Avatar/Avatar";
+import { Avatar } from "@/shared/ui/Avatar";
 
 interface avatarDropdownProps {
     className?: string;

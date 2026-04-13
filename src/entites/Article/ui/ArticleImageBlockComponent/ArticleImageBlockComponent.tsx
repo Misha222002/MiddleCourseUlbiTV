@@ -5,7 +5,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import style from "./ArticleImageBlockComponent.module.scss";
 import { ArticleImageBlock } from "@/entites/Article/model/types/article";
 import { Text } from "@/shared/ui";
-import { TextAlign } from "@/shared/ui/Text/Text";
+import { TextAlign } from "@/shared/ui/Text";
 
 interface ArticleImageBlockComponentProps {
     className?: string;

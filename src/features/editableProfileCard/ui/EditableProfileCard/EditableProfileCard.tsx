@@ -5,7 +5,7 @@ import { memo, useCallback } from "react";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { TextTheme, Text } from "@/shared/ui/Text/Text";
+import { TextTheme, Text } from "@/shared/ui/Text";
 import { getProfileForm } from "../../model/selectors/getProfileForm/getProfileForm";
 import { getProfileLoading } from "@/features/editableProfileCard/model/selectors/getProfileLoading/getProfileLoading";
 import { getProfileError } from "@/features/editableProfileCard/model/selectors/getProfileError/getProfileError";

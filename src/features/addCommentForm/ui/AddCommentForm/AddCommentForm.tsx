@@ -3,7 +3,7 @@ import { memo, useCallback } from "react";
 import { classNames } from "@/shared/lib/classNames/classNames";
 
 import style from "./AddCommentForm.module.scss";
-import { Input } from "@/shared/ui/Input/Input";
+import { Input } from "@/shared/ui/Input";
 import { Button, ButtonTheme } from "@/shared/ui";
 import { useSelector } from "react-redux";
 import {

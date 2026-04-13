@@ -3,7 +3,7 @@ import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 import style from "./ArticleList.module.scss";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
-import { TextSize } from "@/shared/ui/Text/Text";
+import { TextSize } from "@/shared/ui/Text";
 import { Text } from "@/shared/ui";
 import { HTMLAttributeAnchorTarget } from "react";
 

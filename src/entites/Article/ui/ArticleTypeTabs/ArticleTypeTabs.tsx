@@ -1,5 +1,5 @@
 import { ArticleType } from "@/entites/Article/model/types/article";
-import { TabItem, Tabs } from "@/shared/ui/Tabs/Tabs";
+import { TabItem, Tabs } from "@/shared/ui/Tabs";
 import { useCallback, useMemo } from "react";
 import { classNames } from "@/shared/lib/classNames/classNames";
 

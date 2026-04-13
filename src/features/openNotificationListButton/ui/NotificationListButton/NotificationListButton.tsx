@@ -3,9 +3,9 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import { Popover } from "@/shared/ui/Popups";
 import { NotificationList } from "@/entites/Notification";
 import { Button, ButtonTheme } from "@/shared/ui";
-import { Icon } from "@/shared/ui/Icon/Icon";
+import { Icon } from "@/shared/ui/Icon";
 import NotificationIcon from "@/shared/assets/icons/notification-20-20.svg";
-import { Drawer } from "@/shared/ui/Drawer/Drawer";
+import { Drawer } from "@/shared/ui/Drawer";
 import { BrowserView, MobileView } from "react-device-detect";
 
 import style from "./NotificationListButton.module.scss";
