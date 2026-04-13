@@ -1,4 +1,5 @@
 import { BuildOptions } from "typescript";
+
 import babelRemovePropsPlugin from "../../babel/babelRemovePropsPlugin";
 
 interface BuildBabelLoaderProps extends BuildOptions {

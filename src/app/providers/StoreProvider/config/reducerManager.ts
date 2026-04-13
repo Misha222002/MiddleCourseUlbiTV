@@ -4,14 +4,16 @@ import {
     Reducer,
     ReducersMapObject,
 } from "@reduxjs/toolkit";
+
+import { CounterSchema } from "@/entites/Counter";
+import { UserSchema } from "@/entites/User";
+
 import {
     MountedReducers,
     ReducerManager,
     StateSchema,
     StateSchemaKey,
 } from "./StateSchema";
-import { CounterSchema } from "@/entites/Counter";
-import { UserSchema } from "@/entites/User";
 
 export function createReducerManager(
     initialReducers: ReducersMapObject<StateSchema>,

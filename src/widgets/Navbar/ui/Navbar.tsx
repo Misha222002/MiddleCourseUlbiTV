@@ -1,19 +1,21 @@
 /* eslint-disable i18next/no-literal-string */
-import { classNames } from "@/shared/lib/classNames/classNames";
-import style from "./Navbar.module.scss";
-import { useTranslation } from "react-i18next";
-import { Button, ButtonTheme } from "@/shared/ui";
 import { memo, useCallback, useState } from "react";
-import { LoginModal } from "@/features/AuthByUsername";
-import { useSelector } from "react-redux";
-import { getUserAuthData } from "@/entites/User";
-import { Text, TextTheme } from "@/shared/ui/Text";
-import { AppLink, AppLinkTheme } from "@/shared/ui/AppLink";
-import { RoutePath } from "@/app/providers/router/config/routeConfig";
-import { HStack } from "@/shared/ui/Stack";
 
-import { NotificationListButton } from "@/features/openNotificationListButton";
+import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+
+import { RoutePath } from "@/app/providers/router/config/routeConfig";
+import { getUserAuthData } from "@/entites/User";
+import { LoginModal } from "@/features/AuthByUsername";
 import { AvatarDropdown } from "@/features/avatarDropdown";
+import { NotificationListButton } from "@/features/openNotificationListButton";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Button, ButtonTheme } from "@/shared/ui";
+import { AppLink, AppLinkTheme } from "@/shared/ui/AppLink";
+import { HStack } from "@/shared/ui/Stack";
+import { Text, TextTheme } from "@/shared/ui/Text";
+
+import style from "./Navbar.module.scss";
 
 interface NavbarProps {
     className?: string;

@@ -1,6 +1,7 @@
 import type { Preview } from "@storybook/react";
 import "../../src/app/styles/index.scss";
 import { initialize, mswLoader } from "msw-storybook-addon";
+
 import {
     RouterDecorator,
     ThemeDecorator,

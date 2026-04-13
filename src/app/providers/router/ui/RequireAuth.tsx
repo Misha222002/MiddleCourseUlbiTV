@@ -1,9 +1,11 @@
-import { getUserAuthData, UserRole } from "@/entites/User";
-import { getUserRoles } from "@/entites/User/model/selectors/roleSelector";
-import { JSX, ReactNode, useMemo } from "react";
+import { ReactNode, useMemo } from "react";
+
 import { useSelector } from "react-redux";
 import { Navigate, useLocation } from "react-router-dom";
+
 import { RoutePath } from "@/app/providers/router/config/routeConfig";
+import { getUserAuthData, UserRole } from "@/entites/User";
+import { getUserRoles } from "@/entites/User/model/selectors/roleSelector";
 
 interface RequireAuthProps {
     children: ReactNode;

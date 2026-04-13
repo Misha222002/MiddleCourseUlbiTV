@@ -1,11 +1,10 @@
-import { Dispatch } from "@reduxjs/toolkit";
-import { StateSchema } from "@/app/providers/StoreProvider";
 import axios from "axios";
-import { userActions } from "@/entites/User";
-import { fetchProfileData } from "./fetchProfileData";
-import { TestAsyncThunk } from "@/shared/lib/test/TestAsyncThunk/TestAsynkThunk";
+
 import { Country } from "@/entites/Country";
 import { Currency } from "@/entites/Currency";
+import { TestAsyncThunk } from "@/shared/lib/test/TestAsyncThunk/TestAsynkThunk";
+
+import { fetchProfileData } from "./fetchProfileData";
 
 jest.mock("axios");
 

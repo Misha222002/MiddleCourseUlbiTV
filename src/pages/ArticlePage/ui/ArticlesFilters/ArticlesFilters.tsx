@@ -1,4 +1,14 @@
+import { FC, memo, useCallback } from "react";
+
+import { useSelector } from "react-redux";
+
 import { ArticleView, ArticleViewSelector } from "@/entites/Article";
+import {
+    ArticleSortField,
+    ArticleType,
+} from "@/entites/Article/model/types/article";
+import ArticleSortSelector from "@/entites/Article/ui/ArticleSortSelector/ArticleSortSelector";
+import { ArticleTypeTabs } from "@/entites/Article/ui/ArticleTypeTabs/ArticleTypeTabs";
 import {
     getArticlesPageOrder,
     getArticlesPageSearch,
@@ -6,25 +16,15 @@ import {
     getArticlesPageType,
     getArticlesPageView,
 } from "@/pages/ArticlePage/model/selectors/articlesPageSelector";
+import { fetchArticlesList } from "@/pages/ArticlePage/model/services/fetchArticlesList/fetchArticlesList";
 import { articlesPageAction } from "@/pages/ArticlePage/model/slice/articlePageSlice";
-import { FC, memo, useCallback, useMemo } from "react";
-import { useSelector } from "react-redux";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Select } from "@/shared/ui/Select";
-
-import style from "./ArticlesFilters.module.scss";
+import { useDebounce } from "@/shared/lib/hooks/useDebaunce/useDebounce";
+import { SortOrder } from "@/shared/types";
 import { Card } from "@/shared/ui/Card";
 import { Input } from "@/shared/ui/Input";
-import ArticleSortSelector from "@/entites/Article/ui/ArticleSortSelector/ArticleSortSelector";
-import { SortOrder } from "@/shared/types";
-import {
-    ArticleSortField,
-    ArticleType,
-} from "@/entites/Article/model/types/article";
-import { fetchArticlesList } from "@/pages/ArticlePage/model/services/fetchArticlesList/fetchArticlesList";
-import { useDebounce } from "@/shared/lib/hooks/useDebaunce/useDebounce";
-import { TabItem, Tabs } from "@/shared/ui/Tabs";
-import { ArticleTypeTabs } from "@/entites/Article/ui/ArticleTypeTabs/ArticleTypeTabs";
+
+import style from "./ArticlesFilters.module.scss";
 
 interface ArticlesFiltersProps {
     className?: string;

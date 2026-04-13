@@ -1,5 +1,6 @@
 import { StateSchema } from "@/app/providers/StoreProvider";
 import { DeepPartial } from "@/entites/Counter";
+
 import { getLoginPassword } from "./getLoginPassword";
 
 describe("getLoginIsLoading.test", () => {

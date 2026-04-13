@@ -1,14 +1,15 @@
 import { FC, memo, ReactNode, useEffect } from "react";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { Portal } from "../Portal/Portal";
-import { Overlay } from "../Overlay/Overlay";
 
-import style from "./Drawer.module.scss";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import {
     AnimationProvider,
     useAnimationLibs,
 } from "@/shared/lib/components/AnimationProvider";
 import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
+
+import style from "./Drawer.module.scss";
+import { Overlay } from "../Overlay/Overlay";
+import { Portal } from "../Portal/Portal";
 
 interface DrawerProps {
     className?: string;

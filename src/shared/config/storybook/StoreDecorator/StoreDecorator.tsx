@@ -1,14 +1,14 @@
 import React, { FC } from "react";
+
 // eslint-disable-next-line custom-plugin/layer-imports
 import "@/app/styles/index.scss";
 import { StateSchema, StoreProvider } from "@/app/providers/StoreProvider";
-import { loginReducer } from "@/features/AuthByUsername/testing";
-import { ReducersList } from "@/shared/lib/components/DynamicModelLoader/DynamicModelLoader";
-// eslint-disable-next-line custom-plugin/layer-imports
-import { DeepPartial } from "@/entites/Counter";
 import { articleDetailsReducer } from "@/entites/Article/testing";
+import { DeepPartial } from "@/entites/Counter";
 import { addCommentFormReducer } from "@/features/addCommentForm/testing";
+import { loginReducer } from "@/features/AuthByUsername/testing";
 import { profileReducer } from "@/features/editableProfileCard/testing";
+import { ReducersList } from "@/shared/lib/components/DynamicModelLoader/DynamicModelLoader";
 
 interface Props {
     children?: React.ReactNode;

@@ -1,10 +1,12 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { useTranslation } from "react-i18next";
 import { memo } from "react";
-import { TextSize } from "@/shared/ui/Text";
+
+import { useTranslation } from "react-i18next";
+
 import { ArticleList } from "@/entites/Article";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { VStack } from "@/shared/ui/Stack";
-import { Text } from "@/shared/ui/Text";
+import { TextSize, Text } from "@/shared/ui/Text";
+
 import { useGetArticleRecommendationsListQuery } from "../../api/articleRecommendationApi";
 
 interface ArticleRecommendationsListProps {

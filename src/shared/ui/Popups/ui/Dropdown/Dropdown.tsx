@@ -1,13 +1,14 @@
+import { ReactNode } from "react";
+
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
+import { Fragment } from "react/jsx-runtime";
+
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { DropdownDirection } from "@/shared/types/ui";
 
 import style from "./Dropdown.module.scss";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { Fragment } from "react/jsx-runtime";
-import { ReactNode } from "react";
-import { DropdownDirection } from "@/shared/types/ui";
 import { AppLink } from "../../../AppLink/AppLink";
 import { mapDirectionClass } from "../../styles/consts";
-
 import popupStyles from "../../styles/popup.module.scss";
 
 interface DropdownItem {
