@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 import { EditableProfileCard } from "@/features/editableProfileCard";
 import { Text } from "@/shared/ui";
-import Page from "@/widgets/Page/Page";
+import { Page } from "@/widgets/Page";
 
 function ProfilePage() {
     const { id } = useParams<{ id: string }>();
