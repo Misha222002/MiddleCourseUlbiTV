@@ -7,6 +7,7 @@ import {
     ThemeDecorator,
     SuspenseDecorator,
 } from "../../src/shared/config/storybook/index";
+import { Theme } from "../../src/shared/lib/context/ThemeContext";
 
 initialize();
 
