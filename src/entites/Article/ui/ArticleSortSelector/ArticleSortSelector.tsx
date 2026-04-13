@@ -2,7 +2,7 @@ import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { FC, memo, useCallback, useMemo } from "react";
 import { ArticleSortField } from "@/entites/Article";
 import style from "./ArticleSortSelector.module.scss";
-import { Select, SelectOption } from "@/shared/ui/Select/Select";
+import { Select, SelectOption } from "@/shared/ui/Select";
 import { SortOrder } from "@/shared/types";
 
 interface ArticleSortSelectorProps {

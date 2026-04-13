@@ -3,10 +3,10 @@ import { memo } from "react";
 import { Comment } from "@/entites/Comment/model/types/comment";
 
 import style from "./CommentCard.module.scss";
-import { Avatar } from "@/shared/ui/Avatar/Avatar";
+import { Avatar } from "@/shared/ui/Avatar";
 import { Text } from "@/shared/ui";
-import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
-import { AppLink } from "@/shared/ui/AppLink/AppLink";
+import { Skeleton } from "@/shared/ui/Skeleton";
+import { AppLink } from "@/shared/ui/AppLink";
 import { RoutePath } from "@/app/providers/router/config/routeConfig";
 
 interface CommentCardProps {
