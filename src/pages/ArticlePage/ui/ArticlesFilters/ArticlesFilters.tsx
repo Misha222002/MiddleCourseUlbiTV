@@ -2,13 +2,13 @@ import { FC, memo, useCallback } from "react";
 
 import { useSelector } from "react-redux";
 
-import { ArticleView, ArticleViewSelector } from "@/entites/Article";
+import { ArticleView } from "@/entites/Article";
 import {
     ArticleSortField,
     ArticleType,
 } from "@/entites/Article/model/types/article";
-import ArticleSortSelector from "@/entites/Article/ui/ArticleSortSelector/ArticleSortSelector";
-import { ArticleTypeTabs } from "@/entites/Article/ui/ArticleTypeTabs/ArticleTypeTabs";
+import { ArticleSortSelector } from "@/features/ArticleSortSelector";
+import { ArticleTypeTabs } from "@/features/ArticleTypeTabs";
 import {
     getArticlesPageOrder,
     getArticlesPageSearch,
@@ -25,6 +25,7 @@ import { Card } from "@/shared/ui/Card";
 import { Input } from "@/shared/ui/Input";
 
 import style from "./ArticlesFilters.module.scss";
+import { ArticleViewSelector } from "@/features/ArticleViewSelector";
 
 interface ArticlesFiltersProps {
     className?: string;
