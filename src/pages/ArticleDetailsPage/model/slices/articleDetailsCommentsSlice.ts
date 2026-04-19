@@ -8,6 +8,7 @@ import { StateSchema } from "@/app/providers/StoreProvider";
 import { Comment } from "@/entites/Comment";
 
 import { fetchCommentsByArticleId } from "../services/fetchCommentsByArticleId/fetchCommentsByArticleId";
+import { ArticleDetailsCommentsSchema } from "../types/ArticleDetailsCommentsSchema";
 
 const commentsAdapter = createEntityAdapter({
     selectId: (comment: Comment) => comment.id,
@@ -20,12 +21,14 @@ export const getArticleComments = commentsAdapter.getSelectors<StateSchema>(
 
 const articleDetailsCommentsSlice = createSlice({
     name: "articleDetailsCommentsSlice",
-    initialState: commentsAdapter.getInitialState({
-        isLoading: false,
-        error: undefined as string | undefined,
-        ids: [],
-        entities: {},
-    }),
+    initialState: commentsAdapter.getInitialState<ArticleDetailsCommentsSchema>(
+        {
+            isLoading: false,
+            error: undefined as string | undefined,
+            ids: [],
+            entities: {},
+        },
+    ),
     reducers: {},
     extraReducers: (builder) => {
         builder
