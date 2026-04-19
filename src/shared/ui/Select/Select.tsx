@@ -5,7 +5,7 @@ import { classNames, Mods } from "@/shared/lib/classNames/classNames";
 import style from "./Select.module.scss";
 
 export interface SelectOption<T extends string> {
-    value: string;
+    value: T;
     content: string;
 }
 

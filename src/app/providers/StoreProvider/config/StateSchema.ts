@@ -15,10 +15,6 @@ import { LoginSchema } from "@/features/AuthByUsername";
 import { ProfileSchema } from "@/features/editableProfileCard";
 import { SaveScrollSchema } from "@/features/saveScroll";
 import { ArticlesDetailsPageSchema } from "@/pages/ArticleDetailsPage";
-// import {
-//     ArticleDetailsCommentsSchema,
-//     ArticleDetailsRecommendationsSchema,
-// } from "pages/ArticleDetailsPage";
 import { ArticlePageSchema } from "@/pages/ArticlePage";
 import { rtkApi } from "@/shared/api/rtkApi";
 

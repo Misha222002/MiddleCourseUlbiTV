@@ -5,14 +5,12 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import style from "./ArticleDetailsPage.module.scss";
 import { ArticleDetails, ArticleList } from "@/entites/Article";
 import { useNavigate, useParams } from "react-router-dom";
-import { Text } from "@/shared/ui";
-import { CommentList } from "@/entites/Comment";
 import {
     DynamicModelLoader,
     ReducersList,
 } from "@/shared/lib/components/DynamicModelLoader/DynamicModelLoader";
 import Page from "@/widgets/Page/Page";
-import { articleDetailsReducer } from "@/pages/ArticleDetailsPage/model/slices";
+import { articleDetailsPageReducer } from "@/pages/ArticleDetailsPage/model/slices";
 import ArticleDetailsPageHeader from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 import { ArticleRecommendationsList } from "@/features/articleRecommendationsList";
 import { ArticleDetailsComments } from "../ArticleDetailsComments/ArticleDetailsComments";
@@ -23,7 +21,7 @@ interface ArticleDetailsPageProps {
 }
 
 const reducers: ReducersList = {
-    articleDetailsPage: articleDetailsReducer,
+    articleDetailsPage: articleDetailsPageReducer,
 };
 
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
