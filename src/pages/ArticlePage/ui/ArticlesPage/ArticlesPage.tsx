@@ -3,12 +3,7 @@ import { FC, memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import style from "./ArticlesPage.module.scss";
-import {
-    Article,
-    ArticleList,
-    ArticleView,
-    ArticleViewSelector,
-} from "@/entites/Article";
+import { ArticleList } from "@/entites/Article";
 import {
     DynamicModelLoader,
     ReducersList,
