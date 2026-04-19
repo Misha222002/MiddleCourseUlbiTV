@@ -1,6 +1,6 @@
 import { HTMLAttributeAnchorTarget } from "react";
 import { useNavigate } from "react-router-dom";
-import { RoutePath } from "@/app/providers/router/config/routeConfig";
+import { getRouteArticleDetails } from "@/app/providers/router/config/routeConfig";
 import {
     Article,
     ArticleBlockType,
@@ -30,10 +30,6 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
 
     const [isHover, bindHover] = useHover();
     const navigate = useNavigate();
-
-    // const onOpenArticle = useCallback(() => {
-    //     navigate(RoutePath.article_details + article.id);
-    // }, [navigate, article.id]);
 
     const types = (
         <Text text={article?.type?.join(", ")} className={style.types} />
@@ -78,7 +74,7 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
                     <div className={style.footer}>
                         <AppLink
                             target={target}
-                            to={RoutePath.article_details + article.id}
+                            to={getRouteArticleDetails(article.id)}
                         >
                             <Button theme={ButtonTheme.OUTLINE}>
                                 Читать далее...
@@ -94,7 +90,7 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
         <AppLink
             target={target}
             {...bindHover}
-            to={RoutePath.article_details + article.id}
+            to={getRouteArticleDetails(article.id)}
             className={classNames(style.articleListItem, {}, [
                 className,
                 style[view.toLowerCase()],

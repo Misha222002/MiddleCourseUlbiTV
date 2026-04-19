@@ -4,7 +4,7 @@ import { memo, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
-import { RoutePath } from "@/app/providers/router/config/routeConfig";
+import { getRouteArticleCreate } from "@/app/providers/router/config/routeConfig";
 import { getUserAuthData } from "@/entites/User";
 import { LoginModal } from "@/features/AuthByUsername";
 import { AvatarDropdown } from "@/features/avatarDropdown";
@@ -44,7 +44,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                     title={"Misha Ivanov"}
                 />
                 <AppLink
-                    to={RoutePath.article_create}
+                    to={getRouteArticleCreate()}
                     theme={AppLinkTheme.INVERTED}
                     className={style.createBtn}
                 >
