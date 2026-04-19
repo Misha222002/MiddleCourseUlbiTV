@@ -4,7 +4,10 @@ import { FC, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import { RoutePath } from "@/app/providers/router/config/routeConfig";
+import {
+    getRouteArticleEdit,
+    getRouteArticles,
+} from "@/app/providers/router/config/routeConfig";
 import { getArticleDetailsData } from "@/entites/Article/model/selectors/ArticleDetails";
 import { getCanEditArticle } from "@/pages/ArticleDetailsPage/model/selectors/article";
 import { classNames } from "@/shared/lib/classNames/classNames";
@@ -23,11 +26,13 @@ const ArticleDetailsPageHeader: FC<ArticleDetailsPageHeaderProps> = (props) => {
     const article = useSelector(getArticleDetailsData);
 
     const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles);
+        navigate(getRouteArticles());
     }, [navigate]);
 
     const onEditArticle = useCallback(() => {
-        navigate(`${RoutePath.articles}/${article?.id}/edit`);
+        if (article?.id) {
+            navigate(getRouteArticleEdit(article.id));
+        }
     }, [navigate, article?.id]);
 
     return (

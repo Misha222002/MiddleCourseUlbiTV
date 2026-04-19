@@ -3,7 +3,10 @@ import { FC, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 
-import { RoutePath } from "@/app/providers/router/config/routeConfig";
+import {
+    getRouteAdmin,
+    getRouteProfile,
+} from "@/app/providers/router/config/routeConfig";
 import {
     getUserAuthData,
     isUserAdmin,
@@ -43,13 +46,13 @@ export const AvatarDropdown: FC<avatarDropdownProps> = (props) => {
                     ? [
                           {
                               content: t("Админка"),
-                              href: RoutePath.admin_panel,
+                              href: getRouteAdmin(),
                           },
                       ]
                     : []),
                 {
                     content: t("Профиль пользователя"),
-                    href: RoutePath.profile + authData.id,
+                    href: getRouteProfile(authData.id),
                 },
                 {
                     content: t("Выйти"),
