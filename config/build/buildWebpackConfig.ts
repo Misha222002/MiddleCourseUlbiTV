@@ -14,7 +14,7 @@ export function buildWebpackConfig(
     return {
         mode,
         entry: paths.entry,
-        devtool: isDev ? "inline-source-map" : undefined,
+        devtool: isDev ? "eval-cheap-module-source-map" : undefined,
         output: {
             filename: "[name].[contenthash].bundle.js",
             path: paths.build,

@@ -22,6 +22,7 @@ export default [
         languageOptions: {
             globals: {
                 ...globals.browser,
+
                 __IS_DEV__: true,
                 __API__: true,
                 __PROJECT__: true,
@@ -158,6 +159,18 @@ export default [
             "tsconfig.json",
             "babel.config.json",
         ],
+    },
+    {
+        files: ["scripts/**/*.js", "*.config.js", "clear-cache.js"],
+        languageOptions: {
+            globals: {
+                ...globals.node,
+            },
+        },
+        rules: {
+            "import/no-nodejs-modules": "off", // Разрешаем Node.js модули
+            "@typescript-eslint/no-require-imports": "off", // Разрешаем require
+        },
     },
     i18next.configs["flat/recommended"],
     eslintPluginPrettierRecommended,
