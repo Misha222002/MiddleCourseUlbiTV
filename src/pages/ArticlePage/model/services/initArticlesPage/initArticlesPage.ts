@@ -5,7 +5,7 @@ import {
     ArticleSortField,
     ArticleType,
 } from "@/entites/Article/model/types/article";
-import { SortOrder } from "@/shared/types";
+import { SortOrder } from "@/shared/types/sort";
 
 import { getArticlesPageInited } from "../../selectors/articlesPageSelector";
 import { articlesPageAction } from "../../slice/articlePageSlice";

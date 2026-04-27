@@ -22,8 +22,6 @@ export const Tabs = memo((props: TextProps) => {
 
     const clickHandle = useCallback(
         (tab: TabItem) => () => {
-            console.log("click");
-
             onTabClick(tab);
         },
         [onTabClick],
