@@ -66,12 +66,9 @@ export const ArticleList = (props: ArticleListProps) => {
                 style[view.toLowerCase()],
             ])}
         >
-            {articles.length > 0 ? (
-                articles.map(renderArticle)
-            ) : (
-                // eslint-disable-next-line i18next/no-literal-string
-                <div>Empty</div>
-            )}
+            {!isLoading && articles.length > 0 && articles.map(renderArticle)}
+            {/* eslint-disable-next-line i18next/no-literal-string */}
+            {!isLoading && articles.length === 0 && <div>Empty</div>}
             {isLoading && getSkeletons(view)}
         </div>
     );

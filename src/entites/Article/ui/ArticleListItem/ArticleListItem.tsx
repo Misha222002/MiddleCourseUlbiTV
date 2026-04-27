@@ -10,10 +10,12 @@ import EyeIcon from "@/shared/assets/icons/eye-20-20.svg";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useHover } from "@/shared/lib/hooks/useHover/useHover";
 import { Button, ButtonTheme, Text } from "@/shared/ui";
+import { AppImage } from "@/shared/ui/AppImage";
 import { AppLink } from "@/shared/ui/AppLink";
 import { Avatar } from "@/shared/ui/Avatar";
 import { Card } from "@/shared/ui/Card";
 import { Icon } from "@/shared/ui/Icon";
+import { Skeleton } from "@/shared/ui/Skeleton";
 
 import style from "./ArticleListItem.module.scss";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
@@ -64,7 +66,12 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
                     </div>
                     <Text title={article.title} className={style.title} />
                     {types}
-                    <img src={article.img} className={style.img} />
+                    <AppImage
+                        fallback={<Skeleton width={"100%"} height={250} />}
+                        src={article.img}
+                        className={style.img}
+                        alt={article.title}
+                    />
                     {textBlock && (
                         <ArticleTextBlockComponent
                             block={textBlock}
@@ -98,7 +105,12 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
         >
             <Card>
                 <div className={style.imageWrapper}>
-                    <img src={article.img} className={style.img} />
+                    <AppImage
+                        fallback={<Skeleton width={200} height={200} />}
+                        alt={article.img}
+                        src={article.img}
+                        className={style.img}
+                    />
                     <Text text={article.createdAt} className={style.date} />
                 </div>
                 <div className={style.infoWrapper}>
