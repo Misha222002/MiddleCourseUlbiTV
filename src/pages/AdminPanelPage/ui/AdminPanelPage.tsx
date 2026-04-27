@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
 
-function AboutPanelPage() {
+function AdminPanelPage() {
     const { t } = useTranslation("about");
-    return <div>{t("Админ панель")}</div>;
+    return <div data-testid={"AdminPanelPage"}>{t("Админ панель")}</div>;
 }
 
-export default AboutPanelPage;
+export default AdminPanelPage;

@@ -29,8 +29,6 @@ const ArticleRating: FC<ArticleRatingProps> = (props) => {
 
     const [rateArticleMutation] = useRateArticleMutation();
 
-    console.log("data", data);
-
     const rating = data?.[0];
 
     const handleRateArticle = useCallback(

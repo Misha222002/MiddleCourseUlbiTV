@@ -17,7 +17,6 @@ interface RequireAuthProps {
 
 export function RequireAuth({ children, roles }: RequireAuthProps) {
     const auth = useSelector(getUserAuthData);
-    console.log("authData", auth);
     const location = useLocation();
     const userRoles = useSelector(getUserRoles);
 
@@ -29,8 +28,6 @@ export function RequireAuth({ children, roles }: RequireAuthProps) {
             return userRoles?.includes(requiredRole);
         });
     }, [roles, userRoles]);
-
-    console.log("hasRequiredRoles", hasRequiredRoles);
 
     if (!auth) {
         return (

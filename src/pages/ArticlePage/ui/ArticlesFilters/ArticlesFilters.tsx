@@ -20,7 +20,7 @@ import { fetchArticlesList } from "@/pages/ArticlePage/model/services/fetchArtic
 import { articlesPageAction } from "@/pages/ArticlePage/model/slice/articlePageSlice";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useDebounce } from "@/shared/lib/hooks/useDebaunce/useDebounce";
-import { SortOrder } from "@/shared/types";
+import { SortOrder } from "@/shared/types/sort";
 import { Card } from "@/shared/ui/Card";
 import { Input } from "@/shared/ui/Input";
 
