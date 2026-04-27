@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, memo, ReactNode } from "react";
+import { ButtonHTMLAttributes, forwardRef, memo, ReactNode } from "react";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
 
@@ -28,26 +28,29 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     disabled?: boolean;
 }
 
-export const Button = memo((props: ButtonProps) => {
-    const {
-        className,
-        children,
-        theme = ButtonTheme.OUTLINE,
-        square,
-        size = ButtonSize.M,
-        disabled,
-        ...otherProps
-    } = props;
-    return (
-        <button
-            className={classNames(
-                style.button,
-                { [style.square]: square, [style.disabled]: disabled },
-                [className, style[theme], style[size]],
-            )}
-            {...otherProps}
-        >
-            {children}
-        </button>
-    );
-});
+export const Button = memo(
+    forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
+        const {
+            className,
+            children,
+            theme = ButtonTheme.OUTLINE,
+            square,
+            size = ButtonSize.M,
+            disabled,
+            ...otherProps
+        } = props;
+        return (
+            <button
+                ref={ref}
+                className={classNames(
+                    style.button,
+                    { [style.square]: square, [style.disabled]: disabled },
+                    [className, style[theme], style[size]],
+                )}
+                {...otherProps}
+            >
+                {children}
+            </button>
+        );
+    }),
+);
