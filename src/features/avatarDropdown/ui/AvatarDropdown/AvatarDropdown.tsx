@@ -60,8 +60,13 @@ export const AvatarDropdown: FC<avatarDropdownProps> = (props) => {
                 },
             ]}
             direction="bottom left"
-            // className={style.dropdown}
-            trigger={<Avatar size={30} src={authData.avatar} />}
+            trigger={
+                <Avatar
+                    fallbackInverted={true}
+                    size={30}
+                    src={authData.avatar}
+                />
+            }
         />
     );
 };
