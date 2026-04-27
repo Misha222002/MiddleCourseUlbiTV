@@ -25,6 +25,6 @@ jest.mock("axios", () => ({
 
 // Мок для fetchBaseQuery (чтобы убрать предупреждение)
 jest.mock("@reduxjs/toolkit/query/react", () => ({
-    ...jest.requireActual("@reduxjs/toolkit/query/react"),
+    ...(jest.requireActual("@reduxjs/toolkit/query/react") as object),
     fetchBaseQuery: jest.fn(() => jest.fn()),
 }));
