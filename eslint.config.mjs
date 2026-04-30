@@ -9,8 +9,8 @@ import myCustomPlugin from "eslint-plugin-import-path-correct";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 import { FlatCompat } from "@eslint/eslintrc";
 import unusedImports from "eslint-plugin-unused-imports";
-import importPlugin from "eslint-plugin-import";
 import js from "@eslint/js";
+import importPlugin from "eslint-plugin-import";
 
 const compat = new FlatCompat();
 
@@ -21,6 +21,7 @@ export default [
     {
         languageOptions: {
             globals: {
+                ...globals.node,
                 ...globals.browser,
 
                 __IS_DEV__: true,
