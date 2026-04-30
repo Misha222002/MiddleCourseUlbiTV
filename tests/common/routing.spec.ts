@@ -1,8 +1,8 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "../../playwright/fixtures";
 
 test.describe("Роутинг", () => {
     test.describe("Пользователь НЕ авторизован", () => {
-        test.use({ storageState: { cookies: [], origins: [] } });
+        // test.use({ storageState: { cookies: [], origins: [] } });
 
         test("Переход на главную страницу", async ({ page }) => {
             await page.goto("/");
@@ -27,7 +27,10 @@ test.describe("Роутинг", () => {
     });
 
     test.describe("Пользователь авторизован", () => {
-        test.use({ storageState: "playwright/.auth/user.json" });
+        test.beforeEach(async ({ page, common }) => {
+            await common.login();
+        });
+        // test.use({ storageState: "playwright/.auth/user.json" });
         test("Переход открывает страницу пользователя", async ({ page }) => {
             await page.goto("/profile/1");
             const profilePageElement = page.getByTestId("ProfilePage");
