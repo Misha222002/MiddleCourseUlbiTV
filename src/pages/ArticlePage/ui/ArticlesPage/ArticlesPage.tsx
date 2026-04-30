@@ -58,6 +58,7 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
     return (
         <DynamicModelLoader reducers={reducers} removeAfterUnmount={false}>
             <Page
+                data-testid={"ArticlesPage"}
                 onScrollEnd={onLoadNextPart}
                 className={classNames(style.articlesPage, {}, [className])}
             >

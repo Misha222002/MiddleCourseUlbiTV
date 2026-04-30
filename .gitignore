@@ -6,3 +6,10 @@ node_modules
 .loki/report.html
 .loki/report.json
 /reports/unit
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
