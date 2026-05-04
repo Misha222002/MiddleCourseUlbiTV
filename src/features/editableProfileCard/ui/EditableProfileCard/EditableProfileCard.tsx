@@ -6,16 +6,6 @@ import { useSelector } from "react-redux";
 import { Country } from "@/entites/Country";
 import { Currency } from "@/entites/Currency";
 import { ProfileCard } from "@/entites/Profile";
-import { getProfileError } from "@/features/editableProfileCard/model/selectors/getProfileError/getProfileError";
-import { getProfileLoading } from "@/features/editableProfileCard/model/selectors/getProfileLoading/getProfileLoading";
-import { getProfileReadonly } from "@/features/editableProfileCard/model/selectors/getProfileReadonly/getProfileReadonly";
-import { getProfileValidateErrors } from "@/features/editableProfileCard/model/selectors/getProfileValidateError/getProfileValidateError";
-import { fetchProfileData } from "@/features/editableProfileCard/model/services/fetchProfileData/fetchProfileData";
-import {
-    profileActions,
-    profileReducer,
-} from "@/features/editableProfileCard/model/slice/profileSlice";
-import { ValidateProfileError } from "@/features/editableProfileCard/model/types/editableProfileCardSchema";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import {
     DynamicModelLoader,
@@ -27,7 +17,14 @@ import { TextTheme, Text } from "@/shared/ui/Text";
 
 import cls from "./EditableProfileCard.module.scss";
 import { ProfilePageHeader } from "./EditableProfileCardHeader/ProfilePageHeader";
+import { getProfileError } from "../../model/selectors/getProfileError/getProfileError";
 import { getProfileForm } from "../../model/selectors/getProfileForm/getProfileForm";
+import { getProfileLoading } from "../../model/selectors/getProfileLoading/getProfileLoading";
+import { getProfileReadonly } from "../../model/selectors/getProfileReadonly/getProfileReadonly";
+import { getProfileValidateErrors } from "../../model/selectors/getProfileValidateError/getProfileValidateError";
+import { fetchProfileData } from "../../model/services/fetchProfileData/fetchProfileData";
+import { profileActions, profileReducer } from "../../model/slice/profileSlice";
+import { ValidateProfileError } from "../../model/types/editableProfileCardSchema";
 
 interface EditableProfileCardProps {
     className?: string;

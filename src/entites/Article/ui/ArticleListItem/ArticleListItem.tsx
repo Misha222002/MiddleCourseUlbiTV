@@ -1,11 +1,8 @@
 import { HTMLAttributeAnchorTarget } from "react";
+
 import { useNavigate } from "react-router-dom";
+
 import { getRouteArticleDetails } from "@/app/providers/router/config/routeConfig";
-import {
-    Article,
-    ArticleBlockType,
-    ArticleView,
-} from "@/entites/Article/model/types/article";
 import EyeIcon from "@/shared/assets/icons/eye-20-20.svg";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useHover } from "@/shared/lib/hooks/useHover/useHover";
@@ -18,6 +15,11 @@ import { Icon } from "@/shared/ui/Icon";
 import { Skeleton } from "@/shared/ui/Skeleton";
 
 import style from "./ArticleListItem.module.scss";
+import {
+    Article,
+    ArticleBlockType,
+    ArticleView,
+} from "../../model/types/article";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 
 interface ArticleListItemProps {
@@ -54,6 +56,7 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
                     className,
                     style[view.toLowerCase()],
                 ])}
+                data-testid={"ArticleListItem"}
             >
                 <Card>
                     <div className={style.header}>
@@ -102,6 +105,7 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
                 className,
                 style[view.toLowerCase()],
             ])}
+            data-testid={"ArticleListItem"}
         >
             <Card>
                 <div className={style.imageWrapper}>

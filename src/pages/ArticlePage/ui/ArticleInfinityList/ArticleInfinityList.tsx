@@ -3,11 +3,12 @@ import { FC } from "react";
 import { useSelector } from "react-redux";
 
 import { ArticleList } from "@/entites/Article";
+
 import {
     getArticlesPageIsLoading,
     getArticlesPageView,
-} from "@/pages/ArticlePage/model/selectors/articlesPageSelector";
-import { getArticles } from "@/pages/ArticlePage/model/slice/articlePageSlice";
+} from "../../model/selectors/articlesPageSelector";
+import { getArticles } from "../../model/slice/articlePageSlice";
 
 interface ArticleInfinityListProps {
     className?: string;

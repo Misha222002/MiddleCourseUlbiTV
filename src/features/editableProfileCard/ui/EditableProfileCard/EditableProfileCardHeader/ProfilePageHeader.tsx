@@ -4,15 +4,15 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
 import { getUserAuthData } from "@/entites/User";
-import { getProfileData } from "@/features/editableProfileCard/model/selectors/getProfileData/getProfileData";
-import { getProfileReadonly } from "@/features/editableProfileCard/model/selectors/getProfileReadonly/getProfileReadonly";
-import { updateProfileData } from "@/features/editableProfileCard/model/services/updateProfileData/updateProfileData";
-import { profileActions } from "@/features/editableProfileCard/model/slice/profileSlice";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { Button, ButtonTheme, Text } from "@/shared/ui";
 
 import style from "./ProfilePageHeader.module.scss";
+import { getProfileData } from "../../../model/selectors/getProfileData/getProfileData";
+import { getProfileReadonly } from "../../../model/selectors/getProfileReadonly/getProfileReadonly";
+import { updateProfileData } from "../../../model/services/updateProfileData/updateProfileData";
+import { profileActions } from "../../../model/slice/profileSlice";
 
 interface ProfilePageHeader {
     className?: string;

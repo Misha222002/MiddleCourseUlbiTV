@@ -1,7 +1,6 @@
 import { memo } from "react";
 
 import { getRouteProfile } from "@/app/providers/router/config/routeConfig";
-import { Comment } from "@/entites/Comment/model/types/comment";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Text } from "@/shared/ui";
 import { AppLink } from "@/shared/ui/AppLink";
@@ -9,6 +8,7 @@ import { Avatar } from "@/shared/ui/Avatar";
 import { Skeleton } from "@/shared/ui/Skeleton";
 
 import style from "./CommentCard.module.scss";
+import { Comment } from "../../model/types/comment";
 
 interface CommentCardProps {
     className?: string;
@@ -21,7 +21,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
 
     if (isLoading) {
         return (
-            <div>
+            <div data-testid="CommentCard.Loading">
                 <div
                     className={classNames(style.commentCard, {}, [
                         className,
@@ -51,7 +51,10 @@ export const CommentCard = memo((props: CommentCardProps) => {
     }
 
     return (
-        <div className={classNames(style.commentCard, {}, [className])}>
+        <div
+            data-testid="CommentCard.Content"
+            className={classNames(style.commentCard, {}, [className])}
+        >
             <AppLink
                 to={getRouteProfile(comment?.user.id)}
                 className={style.header}

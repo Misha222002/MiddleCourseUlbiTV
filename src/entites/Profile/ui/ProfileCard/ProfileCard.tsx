@@ -1,10 +1,7 @@
 import { useTranslation } from "react-i18next";
 
-import { CountrySelect } from "@/entites/Country";
-import { Country } from "@/entites/Country/model/types/country";
-import { CurrencySelect } from "@/entites/Currency";
-import { Currency } from "@/entites/Currency/model/types/currency";
-import { Profile } from "@/entites/Profile/modal/types/profile";
+import { CountrySelect, Country } from "@/entites/Country";
+import { CurrencySelect, Currency } from "@/entites/Currency";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Avatar } from "@/shared/ui/Avatar";
 import { Input } from "@/shared/ui/Input";
@@ -12,6 +9,7 @@ import { Loader } from "@/shared/ui/Loader";
 import { Text, TextAlign, TextTheme } from "@/shared/ui/Text";
 
 import style from "./ProfileCard.module.scss";
+import { Profile } from "../../modal/types/profile";
 
 interface ProfileCardProps {
     className?: string;

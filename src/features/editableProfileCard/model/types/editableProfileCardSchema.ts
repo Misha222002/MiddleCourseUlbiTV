@@ -1,4 +1,4 @@
-import { Profile } from "@/entites/Profile/modal/types/profile";
+import { Profile } from "@/entites/Profile";
 
 export interface ProfileSchema {
     data?: Profile;

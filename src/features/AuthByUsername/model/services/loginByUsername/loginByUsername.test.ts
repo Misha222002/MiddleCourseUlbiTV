@@ -1,8 +1,9 @@
 import axios from "axios";
 
 import { userActions } from "@/entites/User";
-import { loginByUsername } from "@/features/AuthByUsername/model/services/loginByUsername/loginByUsername";
 import { TestAsyncThunk } from "@/shared/lib/test/TestAsyncThunk/TestAsynkThunk";
+
+import { loginByUsername } from "./loginByUsername";
 
 jest.mock("axios");
 

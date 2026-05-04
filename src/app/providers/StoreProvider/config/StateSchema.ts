@@ -7,8 +7,7 @@ import {
 import { AxiosInstance } from "axios";
 
 import { ArticleDetailsSchema } from "@/entites/Article";
-import { CounterSchema } from "@/entites/Counter";
-import { OptionalRecord } from "@/entites/Counter/model/types/CounterSchema";
+import { CounterSchema, OptionalRecord } from "@/entites/Counter";
 import { UserSchema } from "@/entites/User";
 import { AddCommentFormSchema } from "@/features/addCommentForm";
 import { LoginSchema } from "@/features/AuthByUsername";

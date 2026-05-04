@@ -2,15 +2,15 @@ import { memo, useState } from "react";
 
 import { useSelector } from "react-redux";
 
-import LanguageSwitcher from "@/features/LanguageSwithcher/LanguageSwitcher";
+import LanguageSwitcher from "@/features/LanguageSwithcher";
 import { ThemeSwitcher } from "@/features/ThemeSwitcher";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "@/shared/ui";
 import { ButtonSize } from "@/shared/ui/Button";
-import { getSidebarItems } from "@/widgets/Sidebar/model/selectors/getSidebarItem";
-import { SidebarItem } from "@/widgets/Sidebar/ui/SidebatItem/SidebarItem";
 
 import style from "./Sidebar.module.scss";
+import { getSidebarItems } from "../../model/selectors/getSidebarItem";
+import { SidebarItem } from "../SidebatItem/SidebarItem";
 
 interface SidebarProps {
     className?: string;

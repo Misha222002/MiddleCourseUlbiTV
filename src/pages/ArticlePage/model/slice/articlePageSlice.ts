@@ -5,11 +5,12 @@ import {
 } from "@reduxjs/toolkit";
 
 import { StateSchema } from "@/app/providers/StoreProvider";
-import { Article, ArticleView } from "@/entites/Article";
 import {
+    Article,
+    ArticleView,
     ArticleSortField,
     ArticleType,
-} from "@/entites/Article/model/types/article";
+} from "@/entites/Article";
 import { ARTICLE_VIEW_LOCALSTORAGE_KEY } from "@/shared/const/localstorage";
 import { SortOrder } from "@/shared/types/sort";
 

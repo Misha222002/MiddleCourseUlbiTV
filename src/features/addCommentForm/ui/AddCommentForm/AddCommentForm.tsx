@@ -54,14 +54,22 @@ const AddCommentForm = (props: AddCommentFormProps) => {
 
     return (
         <DynamicModelLoader reducers={reducers}>
-            <div className={classNames(style.addCommentForm, {}, [className])}>
+            <div
+                data-testid="AddCommentForm"
+                className={classNames(style.addCommentForm, {}, [className])}
+            >
                 <Input
+                    data-testid="AddCommentForm.Input"
                     className={style.input}
                     value={text}
                     onChange={onCommentTextChange}
                     placeholder="Введите текст комметария"
                 />
-                <Button theme={ButtonTheme.OUTLINE} onClick={onSendHandler}>
+                <Button
+                    data-testid="AddCommentForm.Button"
+                    theme={ButtonTheme.OUTLINE}
+                    onClick={onSendHandler}
+                >
                     Отправить
                 </Button>
             </div>

@@ -8,12 +8,12 @@ import {
     getRouteArticleEdit,
     getRouteArticles,
 } from "@/app/providers/router/config/routeConfig";
-import { getArticleDetailsData } from "@/entites/Article/model/selectors/ArticleDetails";
-import { getCanEditArticle } from "@/pages/ArticleDetailsPage/model/selectors/article";
+import { getArticleDetailsData } from "@/entites/Article";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "@/shared/ui";
 
 import style from "./ArticleDetailsPageHeader.module.scss";
+import { getCanEditArticle } from "../../model/selectors/article";
 
 interface ArticleDetailsPageHeaderProps {
     className?: string;

@@ -7,8 +7,7 @@ import {
     getRouteForbidden,
     getRouteMain,
 } from "@/app/providers/router/config/routeConfig";
-import { getUserAuthData, UserRole } from "@/entites/User";
-import { getUserRoles } from "@/entites/User/model/selectors/roleSelector";
+import { getUserAuthData, UserRole, getUserRoles } from "@/entites/User";
 
 interface RequireAuthProps {
     children: ReactNode;
