@@ -8,8 +8,8 @@ import { DeepPartial } from "@/entites/Counter";
 import { addCommentFormReducer } from "@/features/addCommentForm/testing";
 import { loginReducer } from "@/features/AuthByUsername/testing";
 import { profileReducer } from "@/features/editableProfileCard/testing";
-import { ReducersList } from "@/shared/lib/components/DynamicModelLoader/DynamicModelLoader";
 import { articleDetailsPageReducer } from "@/pages/ArticleDetailsPage/testing";
+import { ReducersList } from "@/shared/lib/components/DynamicModelLoader/DynamicModelLoader";
 
 interface Props {
     children?: React.ReactNode;

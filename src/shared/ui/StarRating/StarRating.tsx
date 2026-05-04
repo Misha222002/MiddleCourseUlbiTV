@@ -61,6 +61,8 @@ export const StarRating: FC<StarRatingProps> = (props) => {
                     onMouseLeave={onLeave()}
                     onMouseEnter={onHover(starNumber)}
                     onClick={onClick(starNumber)}
+                    data-testid={`StarRating.${starNumber}`}
+                    data-selected={currentStarCount >= starNumber}
                 />
             ))}
         </div>

@@ -65,6 +65,7 @@ export const ArticleList = (props: ArticleListProps) => {
                 className,
                 style[view.toLowerCase()],
             ])}
+            data-testid={"ArticleList"}
         >
             {!isLoading && articles.length > 0 && articles.map(renderArticle)}
             {/* eslint-disable-next-line i18next/no-literal-string */}

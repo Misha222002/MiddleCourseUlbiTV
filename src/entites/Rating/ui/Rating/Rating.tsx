@@ -67,21 +67,32 @@ export const Rating: FC<RatingProps> = (props) => {
         <VStack gap="32">
             <Text title={feedbackTitle} />
             <Input
+                data-testid="Rating.Input"
                 value={feedback}
                 onChange={setFeedback}
                 placeholder={"Ваш отзыв"}
             />
             <HStack gap="16" justify="end">
-                <Button onClick={cancelHandle} theme={ButtonTheme.OUTLINE_RED}>
+                <Button
+                    data-testid="Rating.Close"
+                    onClick={cancelHandle}
+                    theme={ButtonTheme.OUTLINE_RED}
+                >
                     Закрыть
                 </Button>
-                <Button onClick={acceptHandle}>Отправить</Button>
+                <Button data-testid="Rating.Send" onClick={acceptHandle}>
+                    Отправить
+                </Button>
             </HStack>
         </VStack>
     );
 
     return (
-        <Card max className={classNames(style.rating, {}, [className])}>
+        <Card
+            data-testid="RatingCard"
+            max
+            className={classNames(style.rating, {}, [className])}
+        >
             <VStack align={"center"} gap="8">
                 <Text title={starsCount ? "Спасибо за оценку!" : title} />
                 <StarRating

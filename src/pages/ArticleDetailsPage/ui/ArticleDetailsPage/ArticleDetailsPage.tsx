@@ -46,6 +46,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
                 className={classNames(style.articleDetailsPage, {}, [
                     className,
                 ])}
+                data-testid="ArticleDetailsPage"
             >
                 <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />

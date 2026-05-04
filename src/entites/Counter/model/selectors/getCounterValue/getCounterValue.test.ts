@@ -1,7 +1,7 @@
 import { StateSchema } from "@/app/providers/StoreProvider";
-import { DeepPartial } from "@/entites/Counter/model/types/CounterSchema";
 
 import { getCounterValue } from "./getCounterValue";
+import { DeepPartial } from "../../types/CounterSchema";
 
 describe("getCounterValue.test", () => {
     test("return value", () => {

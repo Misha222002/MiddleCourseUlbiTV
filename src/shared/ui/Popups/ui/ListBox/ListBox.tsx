@@ -9,10 +9,10 @@ import {
 
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { DropdownDirection } from "@/shared/types/ui";
-import { Button } from "@/shared/ui/Button";
-import { HStack } from "@/shared/ui/Stack";
 
 import style from "./ListBox.module.scss";
+import { Button } from "../../../Button";
+import { HStack } from "../../../Stack";
 import { mapDirectionClass } from "../../styles/consts";
 import popupStyles from "../../styles/popup.module.scss";
 

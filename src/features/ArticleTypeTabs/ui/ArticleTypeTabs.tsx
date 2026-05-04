@@ -1,6 +1,6 @@
 import { useCallback, useMemo } from "react";
 
-import { ArticleType } from "@/entites/Article/model/types/article";
+import { ArticleType } from "@/entites/Article";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { TabItem, Tabs } from "@/shared/ui/Tabs";
 
