@@ -1,4 +1,5 @@
 import { test, expect } from "../../playwright/fixtures";
+import articleDetails from "../../playwright/fixtures/article-details.json" assert { type: "json" };
 
 let articleId = "";
 
@@ -38,6 +39,12 @@ test.describe("Пользователь заходит на страницу с�
     });
 
     test("и ставим оценку", async ({ page, comments, rating }) => {
+        await page.route("**/articles/*", async (route) => {
+            await route.fulfill({
+                json: articleDetails,
+            });
+        });
+
         await expect(page.getByTestId("ArticleDetailsPage")).toBeVisible();
         await page.getByTestId("RatingCard").scrollIntoViewIfNeeded();
 
