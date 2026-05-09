@@ -2,7 +2,7 @@ import { memo, useState } from "react";
 
 import { useSelector } from "react-redux";
 
-import LanguageSwitcher from "@/features/LanguageSwithcher";
+import { LanguageSwitcher } from "@/features/LanguageSwithcher";
 import { ThemeSwitcher } from "@/features/ThemeSwitcher";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "@/shared/ui";
