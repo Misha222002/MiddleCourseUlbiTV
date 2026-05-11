@@ -15,6 +15,8 @@ import ArticleDetailsPageHeader from "../ArticleDetailsPageHeader/ArticleDetails
 import { ArticleRecommendationsList } from "@/features/articleRecommendationsList";
 import { ArticleDetailsComments } from "../ArticleDetailsComments/ArticleDetailsComments";
 import { ArticleRating } from "@/features/articleRating";
+import { getFeatureFlag } from "@/shared/lib/features";
+import { Counter } from "@/entites/Counter";
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -27,7 +29,8 @@ const reducers: ReducersList = {
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     const { className } = props;
     const { id } = useParams<{ id: string }>();
-
+    const isArticleRatingEnabled = getFeatureFlag("isArticleRatingEnabled");
+    const isCounterEnabled = getFeatureFlag("isCounterEnabled");
     if (!id) {
         return (
             <Page
@@ -50,7 +53,8 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
             >
                 <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
-                <ArticleRating articleId={id} />
+                {isCounterEnabled && <Counter />}
+                {isArticleRatingEnabled && <ArticleRating articleId={id} />}
                 <ArticleRecommendationsList />
                 <ArticleDetailsComments id={id} />
             </Page>
